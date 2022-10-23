@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "unlock": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "atrmagic:fighter_gold_recipe"
+      }
+    }
+  },
+  "rewards": {
+    "function": "atrmagic:craft/fighterjob_gold"
+  }
+}

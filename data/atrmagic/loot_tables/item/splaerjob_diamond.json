@@ -1,0 +1,38 @@
+{
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:stone_sword",
+            "functions": [
+              {
+                "function": "minecraft:set_name",
+                "name": {
+                  "text": "Ultimate Diamond",
+                  "color": "aqua",
+                  "italic": false
+                },
+                "entity": "this"
+              },
+              {
+                "function":"set_lore",
+                "lore":[{
+                  "text": "Splaer Job",
+                  "color": "gray",
+                  "italic": false
+                }],
+                "entity":"this"
+              },
+              {
+                "function": "minecraft:set_nbt",
+                "tag": "{HideFlags:127,RepairCost:100000,Unbreakable:1b,CustomModelData:103,atrmagic:1b,atrmagicdata:3d,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:0,Operation:0,UUID:[I;-946203104,290604478,-1293276245,-577265581],Slot:\"mainhand\"},{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0,Operation:0,UUID:[I;-1830642924,-1157608579,-1366497668,-1664759561],Slot:\"mainhand\"}]}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

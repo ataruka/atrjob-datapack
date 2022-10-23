@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AGG",
+        "AEA",
+        "GGA"
+    ],
+    "key": {
+        "E": {
+            "item": "minecraft:oak_planks"
+        },
+        "G": {
+            "item": "minecraft:gold_ingot"
+        },
+        "A": {
+            "item": "minecraft:golden_apple"
+        }
+    },
+    "result": {
+        "item": "minecraft:knowledge_book",
+        "count": 1
+    }
+}

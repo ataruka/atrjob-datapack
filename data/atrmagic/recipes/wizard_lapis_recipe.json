@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GLL",
+        "GEG",
+        "LLG"
+    ],
+    "key": {
+        "E": {
+            "item": "minecraft:enchanted_book"
+        },
+        "L": {
+            "item": "minecraft:lapis_lazuli"
+        },
+        "G": {
+            "item": "minecraft:golden_apple"
+        }
+    },
+    "result": {
+        "item": "minecraft:knowledge_book",
+        "count": 1
+    }
+}

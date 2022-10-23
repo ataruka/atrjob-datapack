@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "unlock": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "atrmagic:pharmacist_potion_recipe"
+      }
+    }
+  },
+  "rewards": {
+    "function": "atrmagic:craft/pharmacistjob_potion"
+  }
+}

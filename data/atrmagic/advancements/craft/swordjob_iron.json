@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "unlock": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "atrmagic:sword_iron_recipe"
+      }
+    }
+  },
+  "rewards": {
+    "function": "atrmagic:craft/swordjob_iron"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "unlock": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "atrmagic:archer_emerald_recipe"
+      }
+    }
+  },
+  "rewards": {
+    "function": "atrmagic:craft/archerjob_emerald"
+  }
+}

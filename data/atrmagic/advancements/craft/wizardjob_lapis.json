@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "unlock": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "atrmagic:wizard_lapis_recipe"
+      }
+    }
+  },
+  "rewards": {
+    "function": "atrmagic:craft/wizardjob_lapis"
+  }
+}

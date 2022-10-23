@@ -1,0 +1,1 @@
+attribute @s generic.attack_damage modifier add 51279ba1-3855-4b82-8996-3b1482416791 "atrswordbuff damage +30%" 0.3 multiply

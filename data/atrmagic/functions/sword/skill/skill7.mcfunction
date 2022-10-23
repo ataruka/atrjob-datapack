@@ -1,0 +1,1 @@
+attribute @s generic.max_health modifier add cfe52cd1-4410-4f1f-b695-c78d5474c8ab "atrswordbuff health +4" 4 add

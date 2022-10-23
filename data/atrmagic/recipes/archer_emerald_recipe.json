@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GEE",
+        "GBG",
+        "EEG"
+    ],
+    "key": {
+        "B": {
+            "item": "minecraft:bow"
+        },
+        "E": {
+            "item": "minecraft:emerald"
+        },
+        "G": {
+            "item": "minecraft:golden_apple"
+        }
+    },
+    "result": {
+        "item": "minecraft:knowledge_book",
+        "count": 1
+    }
+}
