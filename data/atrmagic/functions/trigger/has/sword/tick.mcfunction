@@ -180,9 +180,9 @@
     #damage_9.3
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run execute anchored eyes if score pvp atrjobsetting matches 1 at @s rotated ~ 0 positioned ^ ^ ^2 run tag @a[distance=..2.5,tag=!swordskill9attack_2,gamemode=!spectator,gamemode=!creative] add swordskill9ef_3
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run execute as @s at @s anchored eyes rotated ~ 0 positioned ^ ^ ^2 run tag @e[type=!#atrmagic:non_living,distance=..2.5,type=!player] add swordskill9ef_3
-     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] run execute as @e[tag=swordskill9ef_3] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:25b,Amplifier:25b,Duration:5,ShowParticles:0b}]}
+     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] run execute as @e[tag=swordskill9ef_3] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:25b,Amplifier:25b,Duration:6,ShowParticles:0b}]}
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] run execute as @e[tag=swordskill9ef_3] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:28b,Amplifier:25b,Duration:30,ShowParticles:0b}]}
-     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:25b,Amplifier:25b,Duration:5,ShowParticles:0b}]}
+     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:25b,Amplifier:25b,Duration:6,ShowParticles:0b}]}
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:28b,Amplifier:0b,Duration:60,ShowParticles:0b}]}
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run data modify storage score_damage: Argument set value {Damage:10.00}
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run execute as @e[tag=swordskill9ef_3] at @s run function score_damage:api/attack
