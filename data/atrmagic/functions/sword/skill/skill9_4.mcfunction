@@ -2,6 +2,7 @@
  tag @s add swordskill9attack_4
  tag @s add atrswordct9
  tag @s add atrsword9now
+ tag @s add swordskill9_4
 #damagetagadd
  execute anchored eyes if score pvp atrjobsetting matches 1 at @s positioned ^ ^ ^ run tag @a[distance=..5,tag=!swordskill9attack_4,gamemode=!spectator,gamemode=!creative] add swordskill9ef_4
  execute as @s at @s anchored eyes positioned ^ ^ ^ run tag @e[type=!#atrmagic:non_living,distance=..5,type=!player] add swordskill9ef_4

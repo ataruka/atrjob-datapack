@@ -197,6 +197,7 @@
    execute as @a[scores={swordskill9now=..0}] run tag @s remove swordskill9_1
    execute as @a[scores={swordskill9now=..0}] run tag @s remove swordskill9_2
    execute as @a[scores={swordskill9now=..0}] run tag @s remove swordskill9_3
+   execute as @a[scores={swordskill9now=..0}] run tag @s remove swordskill9_4
    execute as @a[tag=atrsword9now,scores={swordskill9now=..0}] run tag @s remove atrsword9now
    execute as @a[scores={swordskill9now=..0}] run scoreboard players reset @s swordskill9now
    execute as @a[scores={swordskill9re=..0,swordskill9_=2..4}] run tag @s add atrswordct9

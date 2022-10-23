@@ -1,6 +1,8 @@
 
 {
 	"values": [
-		"atrmagic:reload"
+		"atrmagic:reload",
+		"score_damage:core/init",
+		"score_to_health:load"
 	]
 }
