@@ -20,11 +20,13 @@
   execute as @e[tag=swordskill4ef,type=!player] at @s run data merge entity @s {NoAI:true}
   execute as @e[tag=swordskill4ef,type=!player,scores={swordskill4ef=..0}] at @s run data merge entity @s {NoAI:false}
   execute as @e[tag=swordskill4ef] at @s run particle minecraft:dust 0 0 0 3 ~ ~1 ~ 0.5 0.5 0.5 0 1
+  execute as @e[tag=swordskill4ef] at @s run tp @e[distance=0.2,sort=nearest,limit=1]
  #clear
   execute as @e[scores={swordjobCT4=..0},tag=atrswordct4] at @s run playsound minecraft:block.smithing_table.use master @s ~ ~ ~ 2 1 0
   execute as @e[scores={swordjobCT4=..0},tag=atrswordct4] run tag @s remove atrswordct4
   execute as @e[scores={swordjobCT4=..0}] run scoreboard players reset @s swordjobCT4
   execute as @e[scores={swordskill4ef=..0},tag=swordskill4ef] at @s run particle minecraft:dust 1 1 1 1 ~ ~1 ~ 0.5 0.5 0.5 0 100 force
+  execute as @e[scores={swordskill4ef=..0},tag=swordskill4ef] at @s run kill @e[tag=swordskill4ef.armorstand,distance=..0.2,limit=1,sort=nearest]
   execute as @e[scores={swordskill4ef=..0},tag=swordskill4ef] run tag @s remove swordskill4ef
   execute as @e[scores={swordskill4ef=..0}] run scoreboard players reset @s swordskill4ef
 
@@ -39,10 +41,9 @@
  #effect
   execute as @a[tag=atrsword6now] at @s anchored eyes positioned ^ ^ ^2 run tag @e[type=#minecraft:arrows,distance=..3,nbt={inGround:0b},tag=!swordskill6now_arrow_end] add swordskill6now_arrow
   execute as @e[tag=swordskill6now_arrow] run data merge entity @s {Motion:[0.0,0.0,0.0]}
-  execute as @e[tag=swordskill6now_arrow] at @a[tag=atrsword6now,sort=nearest,limit=1] positioned 0.0 0.0 0.0 run summon minecraft:armor_stand ^ ^ ^0.3 {Tags:["atrsword6_set_Motion"],NoGravity:1b,Marker:1b,Invisible:1b}
+  execute as @e[tag=swordskill6now_arrow] at @a[tag=atrsword6now,sort=nearest,limit=1] positioned 0.0 0.0 0.0 run summon minecraft:armor_stand ^ ^-0.5 ^0.3 {Tags:["atrsword6_set_Motion"],NoGravity:1b,Marker:1b,Invisible:1b}
   execute as @e[tag=swordskill6now_arrow] run data modify entity @s Motion set from entity @e[tag=atrsword6_set_Motion,limit=1] Pos
-  execute as @e[tag=swordskill6now_arrow] run data modify entity @s Motion[1] set value -0.3
-  execute as @e[tag=swordskill6now_arrow] run data modify entity @s damage set value 0
+  execute as @e[tag=swordskill6now_arrow] run data modify entity @s damage set value 1
   kill @e[tag=atrsword6_set_Motion]
   execute as @e[tag=swordskill6now_arrow] at @s run particle minecraft:wax_off ~ ~ ~ 0 0 0 0 1 force
   execute as @e[tag=swordskill6now_arrow,nbt={inGround:0b}] run tag @s add swordskill6now_arrow_end
@@ -65,6 +66,11 @@
   scoreboard players add @a[tag=atrsword8now] swordskill8now 1
   execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:8d,atrct:1b}}}] at @s run title @s actionbar [{"text":"剣撃渦台クールタイム: あと","color":"white","italic":false},{"score":{"name":"@s","objective":"swordjobCT8"},"color":"gold","italic":false}]
  #effect
+  execute as @a[tag=atrsword8now,scores={swordskill8now=1..20}] run effect clear @s resistance
+  execute as @a[tag=atrsword8now,scores={swordskill8now=1..20}] run attribute @s generic.armor modifier add 2f5f542d-161a-42ee-94d2-8a41df455463 "swordskill8 Debuff armor-100%" -1 multiply
+  execute as @a[tag=atrsword8now,scores={swordskill8now=1..20}] run attribute @s generic.armor_toughness modifier add fc0e2cb0-3270-4117-916e-acf10ba89e9b "swordskill8 Debuff armor_toughness-100%" -1 multiply
+  execute as @a[tag=atrsword8now,scores={swordskill8now=21}] run attribute @s generic.armor modifier remove 2f5f542d-161a-42ee-94d2-8a41df455463
+  execute as @a[tag=atrsword8now,scores={swordskill8now=21}] run attribute @s generic.armor_toughness modifier remove fc0e2cb0-3270-4117-916e-acf10ba89e9b
   execute as @a[tag=atrsword8now,scores={swordskill8now=1}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:25b,Amplifier:25b,Duration:5,ShowParticles:0b}]}
   execute as @a[tag=atrsword8now,scores={swordskill8now=1}] at @s run effect give @s slow_falling 1000 0 true
   execute as @a[tag=atrsword8now,scores={swordskill8now=1}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:4b,Amplifier:127b,Duration:15,ShowParticles:0b}]}
@@ -152,18 +158,18 @@
    execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:9.4d}}}] at @s run title @s actionbar [{"text":"連鎖撃3st: リセットまであと","color":"white","italic":false},{"score":{"name":"@s","objective":"swordskill9re"},"color":"gold","italic":false}]
    execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:9d,atrct:1b}}}] at @s run title @s actionbar [{"text":"連鎖撃クールタイム: あと","color":"white","italic":false},{"score":{"name":"@s","objective":"swordjobCT9"},"color":"gold","italic":false}]
   #effect
-   execute as @a[scores={swordskill9now=10,swordskill9_=1}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:11b,Amplifier:4b,Duration:10,ShowParticles:0b}]}
-   execute as @a[scores={swordskill9now=1..10,swordskill9_=1}] run effect give @s levitation 1 128 true
-   execute as @a[scores={swordskill9now=1..10,swordskill9_=1}] run effect give @e[tag=swordskill9ef_4.0] levitation 1 128 true
-   execute as @a[scores={swordskill9now=10,swordskill9_=1}] run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:4b,Amplifier:127b,Duration:10,ShowParticles:0b}]}
-   execute as @a[scores={swordskill9now=10,swordskill9_=2}] run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:4b,Amplifier:127b,Duration:10,ShowParticles:0b}]}
-   execute as @a[scores={swordskill9now=10,swordskill9_=3}] run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:4b,Amplifier:127b,Duration:10,ShowParticles:0b}]}
-   execute as @a[scores={swordskill9now=1..10,swordskill9_=1},nbt={OnGround:1b}] run effect clear @s levitation
-   execute as @a[scores={swordskill9now=1..10,swordskill9_=1},nbt={OnGround:1b}] run effect clear @e[tag=swordskill9ef_4.0] levitation
-   execute as @a[scores={swordskill9now=1,swordskill9_=1}] run effect clear @s levitation
-   execute as @a[scores={swordskill9now=1,swordskill9_=1}] run effect clear @e[tag=swordskill9ef_4.0] levitation
+   execute as @a[scores={swordskill9now=10},tag=swordskill9_4] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:11b,Amplifier:4b,Duration:10,ShowParticles:0b}]}
+   execute as @a[scores={swordskill9now=1..10},tag=swordskill9_4] run effect give @s levitation 1 128 true
+   execute as @a[scores={swordskill9now=1..10},tag=swordskill9_4] run effect give @e[tag=swordskill9ef_4.0] levitation 1 128 true
+   execute as @a[scores={swordskill9now=10},tag=swordskill9_4] run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:4b,Amplifier:127b,Duration:10,ShowParticles:0b}]}
+   execute as @a[scores={swordskill9now=10},tag=swordskill9_1] run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:4b,Amplifier:127b,Duration:10,ShowParticles:0b}]}
+   execute as @a[scores={swordskill9now=10},tag=swordskill9_2] run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:4b,Amplifier:127b,Duration:10,ShowParticles:0b}]}
+   execute as @a[scores={swordskill9now=1..10},tag=swordskill9_4,nbt={OnGround:1b}] run effect clear @s levitation
+   execute as @a[scores={swordskill9now=1..10},tag=swordskill9_4,nbt={OnGround:1b}] run effect clear @e[tag=swordskill9ef_4.0] levitation
+   execute as @a[scores={swordskill9now=1},tag=swordskill9_4] run effect clear @s levitation
+   execute as @a[scores={swordskill9now=1},tag=swordskill9_4] run effect clear @e[tag=swordskill9ef_4.0] levitation
     #particle_9.3
-     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=20}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:4b,Amplifier:5b,Duration:10,ShowParticles:0b}]}
+     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=20}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:2b,Amplifier:5b,Duration:10,ShowParticles:0b}]}
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=20}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:4b,Amplifier:127b,Duration:10,ShowParticles:0b}]}
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run playsound minecraft:entity.player.attack.sweep master @a ~ ~ ~ 2 1.7
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run function atrmagic:particle/sword/skill9_3
@@ -188,6 +194,9 @@
    execute as @a[scores={swordskill9re=..0,swordskill9_=2..4}] at @s run playsound minecraft:item.axe.scrape master @s ~ ~ ~ 1 2
   #clear
    execute as @e[scores={swordjobCT9=..0},tag=atrswordct9] at @s run playsound minecraft:block.smithing_table.use master @s ~ ~ ~ 2 1 0
+   execute as @a[scores={swordskill9now=..0}] run tag @s remove swordskill9_1
+   execute as @a[scores={swordskill9now=..0}] run tag @s remove swordskill9_2
+   execute as @a[scores={swordskill9now=..0}] run tag @s remove swordskill9_3
    execute as @a[tag=atrsword9now,scores={swordskill9now=..0}] run tag @s remove atrsword9now
    execute as @a[scores={swordskill9now=..0}] run scoreboard players reset @s swordskill9now
    execute as @a[scores={swordskill9re=..0,swordskill9_=2..4}] run tag @s add atrswordct9
@@ -196,4 +205,3 @@
    execute as @a[tag=atrswordct9,scores={swordjobCT9=..0}] run tag @s remove atrswordct9
    execute as @a[scores={swordjobCT9=..0}] run scoreboard players reset @s swordjobCT9
    execute as @a[scores={swordskill9re=..0}] run scoreboard players reset @s swordskill9re
-

@@ -30,6 +30,8 @@
   tag @s remove swordskill9attack_4
   tag @s remove swordskill9ef_3.0
   tag @s remove swordskill9ef_4.0
+ #kill
+  kill @e[tag=swordskill4ef.armorstand,limit=1,sort=nearest,distance=..1.5]
 
  #score
   scoreboard players reset @s swordskill4ef
@@ -49,4 +51,4 @@
   effect clear @s
   stopsound @s
   execute if entity @s[tag=atrswordjob] run scoreboard players add @s swordjobExp 50
-  give @s[type=player] apple{display:{Name:'{"text":"死んでしまった！","color":"white"}',Lore:['{"text":"ああ なんということでしょう","color":"gray","italic":false}','{"text":"あなたは死んでしまいました","color":"gray","italic":false,"underlined":true}','{"text":" "}','[{"text":"お悔みに","color":"gray","italic":false},{"text":"経験値50","color":"dark_green","italic":false,"underlined":true},{"text":"と","color":"gray","italic":false},{"text":"リンゴ","color":"dark_red","italic":false,"underlined":true},{"text":"を"}]','{"text":"ひとつ差し上げます","color":"gray","italic":false}']}}
+  execute as @s[type=player] at @s run summon item ~ ~ ~ {Health:50,PickupDelay:0s,Item:{id:"minecraft:apple",Count:1b,tag:{display:{Name:'{"text":"死んでしまった！","color":"white"}',Lore:['{"text":"ああ なんということでしょう","color":"gray","italic":false}','{"text":"あなたは死んでしまいました","color":"gray","italic":false,"underlined":true}','{"text":" "}','[{"text":"お悔みに","color":"gray","italic":false},{"text":"経験値50","color":"dark_green","italic":false,"underlined":true},{"text":"と","color":"gray","italic":false},{"text":"リンゴ","color":"dark_red","italic":false,"underlined":true},{"text":"を"}]','{"text":"ひとつ差し上げます","color":"gray","italic":false}']}}}}

@@ -18,7 +18,7 @@
  execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:9d}}}] run item replace entity @s weapon.mainhand with carrot_on_a_stick{display:{Name:'{"text":"連鎖撃","color":"white","italic":false}',Lore:['[{"keybind":"key.use","color":"gold","italic":false},{"text":"を押して発動","color":"gray","italic":false}]']},HideFlags:127,Unbreakable:1b,CustomModelData:1008,atrswordjobskill:9.2d,atrswordjob:1b,atrct:0b}
  execute if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:9d}}]}] run item replace entity @s weapon.offhand with carrot_on_a_stick{display:{Name:'{"text":"連鎖撃","color":"white","italic":false}',Lore:['[{"keybind":"key.use","color":"gold","italic":false},{"text":"を押して発動","color":"gray","italic":false}]']},HideFlags:127,Unbreakable:1b,CustomModelData:1008,atrswordjobskill:9.2d,atrswordjob:1b,atrct:0b}
 #score
- scoreboard players add @s swordskill9now 10
+ scoreboard players add @s swordskill9now 11
  scoreboard players set @s swordskill9re 60
  scoreboard players set @s swordskill9_ 2
 
