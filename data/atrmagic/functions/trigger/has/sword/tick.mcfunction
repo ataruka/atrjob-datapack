@@ -78,6 +78,7 @@
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:0b}] run effect give @s levitation 3 128 true
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] run effect clear @s levitation
   execute as @a[tag=atrsword8now_re] run effect clear @s slow_falling
+  execute as @a[tag=atrsword8now_re] run tag @s remove atrsword8now_re
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] run tag @s add atrsword8now_re
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:0b}] run effect give @s resistance 3 4 true
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] run effect clear @s resistance
