@@ -1,4 +1,5 @@
 playsound minecraft:ui.button.click master @s ~ ~ ~ 1 2
+scoreboard players set @s swordjobtext 2
 scoreboard players reset @s atrtrigger.text
 scoreboard players enable @s atrtrigger.text
 tellraw @s {"text":"-----------------------\n            スキル設定\n-----------------------"}

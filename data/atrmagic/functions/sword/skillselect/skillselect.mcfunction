@@ -1,4 +1,5 @@
 playsound minecraft:ui.button.click master @s ~ ~ ~ 1 2
+scoreboard players set @s swordjobtext 3
 scoreboard players reset @s atrtrigger.text
 scoreboard players enable @s atrtrigger.text
 tellraw @s {"text":"-----------------------\n            スキル設定\n-----------------------"}
@@ -16,5 +17,5 @@ execute as @a[scores={swordjobLv=5..,swordjobskill16=0}] at @s run tellraw @s [{
 execute as @a[scores={swordjobLv=5..,swordjobskill16=1}] at @s run tellraw @s [{"text":"[原神から登場！無双の一太刀]","color":"white"},{"text":" 選択済み","color":"gray"}]
 execute as @a[scores={swordjobLv=5..,swordjobskill17=0}] at @s run tellraw @s [{"text":"[スプラトゥーン2から！マルチミサイル]","color":"white"},{"text":" 選択する","color":"green","clickEvent":{"action":"run_command","value":"/trigger atrtrigger.text set 36"}}]
 execute as @a[scores={swordjobLv=5..,swordjobskill17=1}] at @s run tellraw @s [{"text":"[スプラトゥーン2から！マルチミサイル]","color":"white"},{"text":" 選択済み","color":"gray"}]
-tellraw @s [{"text":"\n[戻る]","color":"gold","clickEvent":{"action":"run_command","value":"/trigger atrtrigger.text set 1"}}]
+tellraw @s [{"text":"\n[戻る]","color":"gold","clickEvent":{"action":"run_command","value":"/trigger atrtrigger.text set 37"}}]
 tellraw @s {"text":"-----------------------"}
