@@ -167,6 +167,8 @@
    execute as @a[scores={swordskill9now=10},tag=swordskill9_2] run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:4b,Amplifier:127b,Duration:10,ShowParticles:0b}]}
    execute as @a[scores={swordskill9now=1..10},tag=swordskill9_4,nbt={OnGround:1b}] run effect clear @s levitation
    execute as @a[scores={swordskill9now=1..10},tag=swordskill9_4,nbt={OnGround:1b}] run effect clear @e[tag=swordskill9ef_4.0] levitation
+   execute as @a[scores={swordskill9now=1..10},tag=swordskill9_4,nbt={OnGround:1b}] run effect clear @s slow_falling
+   execute as @a[scores={swordskill9now=1..10},tag=swordskill9_4,nbt={OnGround:1b}] run effect clear @e[tag=swordskill9ef_4.0] slow_falling
    execute as @a[scores={swordskill9now=1},tag=swordskill9_4] run effect clear @s levitation
    execute as @a[scores={swordskill9now=1},tag=swordskill9_4] run effect clear @e[tag=swordskill9ef_4.0] levitation
     #particle_9.3
