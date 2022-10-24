@@ -1,7 +1,7 @@
 #tagadd
  tag @s add swordskill9attack_4
  tag @s add atrswordct9
- tag @s add atrsword9now
+ tag @s add atrsword9now_4
  tag @s add swordskill9_4
 #damagetagadd
  execute anchored eyes if score pvp atrjobsetting matches 1 at @s positioned ^ ^ ^ run tag @a[distance=..5,tag=!swordskill9attack_4,gamemode=!spectator,gamemode=!creative] add swordskill9ef_4
@@ -12,6 +12,7 @@
  playsound minecraft:item.trident.thunder master @a ~ ~ ~ 2 1
  execute rotated ~ 0 run function atrmagic:particle/sword/skill9_4
 #effect
+ effect give @s levitation 3 128 true
 #damage
  data modify storage score_damage: Argument set value {Damage:20.00,DamageType:"Fire"}
  execute as @e[tag=swordskill9ef_4] at @s run function score_damage:api/attack
@@ -22,7 +23,7 @@
  execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:9.4d}}}] run item replace entity @s weapon.mainhand with carrot_on_a_stick{display:{Name:'{"text":"*連鎖撃*","color":"gray","italic":false}',Lore:['[{"text":"クールタイム中です","color":"gray","italic":false}]']},HideFlags:127,Unbreakable:1b,CustomModelData:1011,atrswordjobskill:9d,atrswordjob:1b,atrct:1b}
  execute if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:9.4d}}]}] run item replace entity @s weapon.offhand with carrot_on_a_stick{display:{Name:'{"text":"*連鎖撃*","color":"gray","italic":false}',Lore:['[{"text":"クールタイム中です","color":"gray","italic":false}]']},HideFlags:127,Unbreakable:1b,CustomModelData:1011,atrswordjobskill:9d,atrswordjob:1b,atrct:1b}
 #score
- scoreboard players add @s swordskill9now 11
+ scoreboard players set @s swordskill9now_4 11
  scoreboard players set @s swordjobCT9 600
  scoreboard players set @s swordskill9_ 1
  scoreboard players reset @s swordskill9re

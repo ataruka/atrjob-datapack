@@ -55,6 +55,7 @@ scoreboard objectives add swordskill6now dummy
 scoreboard objectives add swordskill8now dummy
 scoreboard objectives add swordskill8me dummy
 scoreboard objectives add swordskill8damage dummy
+scoreboard objectives add swordskill9now_4 dummy
 scoreboard objectives add swordskill9now dummy
 scoreboard objectives add swordskill9re dummy
 scoreboard objectives add swordjobCT9 dummy
@@ -64,7 +65,9 @@ scoreboard objectives add swordjobtext dummy
 #MPの自動回復に使用
 scoreboard objectives add atrMPtime dummy
 #乱数生成に使用
-scoreboard objectives add atrmagicrng dummy
+scoreboard objectives add atrjobrng dummy
+#FallDistance
+scoreboard objectives add atrjob.falldistance dummy
 #HPを表示固定
 scoreboard objectives setdisplay belowName atrHealth
 #スタートの実績解除
