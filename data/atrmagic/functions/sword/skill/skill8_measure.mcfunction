@@ -23,5 +23,5 @@ execute positioned ~ ~-0.1 ~ unless block ~ ~ ~ air if score @s swordskill8me ma
 execute positioned ~ ~-0.1 ~ unless block ~ ~ ~ air if score @s swordskill8me matches 351..460 rotated 0 0 positioned ~ ~1 ~ run tag @s add swordskill8_25m
 execute positioned ~ ~-0.1 ~ unless block ~ ~ ~ air if score @s swordskill8me matches 461.. rotated 0 0 positioned ~ ~1 ~ run function atrmagic:particle/sword/skill8/skill8_30m
 execute positioned ~ ~-0.1 ~ unless block ~ ~ ~ air if score @s swordskill8me matches 461.. rotated 0 0 positioned ~ ~1 ~ run tag @s add swordskill8_30m
-execute if entity @s positioned ~ ~-0.1 ~ if block ~ ~ ~ air run function atrmagic:sword/skill/skill8_measure
+execute if entity @s[distance=..48] positioned ~ ~-0.1 ~ if block ~ ~ ~ air run function atrmagic:sword/skill/skill8_measure
 
