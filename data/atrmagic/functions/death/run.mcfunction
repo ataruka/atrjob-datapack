@@ -5,5 +5,8 @@ execute if entity @s[tag=swordskill9ef_1,type=player] if entity @a[tag=swordskil
 execute if entity @s[tag=swordskill9ef_2,type=player] if entity @a[tag=swordskill9attack_2] run function atrmagic:death/sword/skill9_2
 execute if entity @s[tag=swordskill9ef_3,type=player] if entity @a[tag=swordskill9attack_3] run function atrmagic:death/sword/skill9_3
 execute if entity @s[tag=swordskill9ef_4,type=player] if entity @a[tag=swordskill9attack_4] run function atrmagic:death/sword/skill9_4
+execute if entity @s[tag=atrjob.fire1,type=player] run function atrmagic:death/fire/1
+execute if entity @s[tag=atrjob.fire2,type=player] run function atrmagic:death/fire/2
+execute if entity @s[tag=atrjob.fire3,type=player] run function atrmagic:death/fire/3
 execute unless score kill atrjobsetting matches 1 run kill @s
 scoreboard players reset kill atrjobsetting

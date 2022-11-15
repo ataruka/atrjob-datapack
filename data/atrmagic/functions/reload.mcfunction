@@ -18,6 +18,15 @@ scoreboard objectives add atrminestone minecraft.mined:minecraft.stone
 scoreboard objectives add atrminecoal minecraft.mined:minecraft.coal_ore
 scoreboard objectives add atrmineiron minecraft.mined:minecraft.iron_ore
 scoreboard objectives add atrminedia minecraft.mined:minecraft.diamond_ore
+#abnormal(状態異常)
+scoreboard objectives add atrjob.firetick dummy
+scoreboard objectives add atrjob.watertick dummy
+scoreboard objectives add atrjob.thundertick dummy
+scoreboard objectives add atrjob.firedamagetick dummy
+scoreboard objectives add atrjob.waterdamagetick dummy
+scoreboard objectives add atrjob.thunderdamagetick dummy
+#damage
+scoreboard objectives add atrjob.damage dummy
 #金林檎
 scoreboard objectives add swordjobGA minecraft.used:minecraft.golden_apple
 #use coas=carrot_on_a_stick
@@ -78,6 +87,8 @@ scoreboard players set #100 atrmagicrng 100
 scoreboard players set #2 atrmagicrng 2
 #開始時にpvpをoff
 execute unless score pvp atrjobsetting matches 0.. run scoreboard players set pvp atrjobsetting 0
+#開始時にチーム戦をoff
+execute unless score team atrjobsetting matches 0.. run scoreboard players set team atrjobsetting 0
 #常に読み込む
 forceload add 32 32 -32 -32
 #進捗付与
@@ -88,6 +99,22 @@ advancement grant @a[scores={swordjobLv=2..}] only atrmagic:sword/swordjoblv2
 advancement grant @a[scores={swordjobLv=3..}] only atrmagic:sword/swordjoblv3
 advancement grant @a[scores={swordjobLv=4..}] only atrmagic:sword/swordjoblv4
 advancement grant @a[scores={swordjobLv=5..}] only atrmagic:sword/swordjoblv5
+#チーム作成
+team add atrjob.blue "Team青"
+team add atrjob.red "Team赤"
+team add atrjob.yellow "Team黄"
+team add atrjob.green "Team緑"
+#チーム設定
+#color
+team modify atrjob.blue color aqua
+team modify atrjob.red color red
+team modify atrjob.yellow color yellow
+team modify atrjob.green color green
+#FF
+team modify atrjob.blue friendlyFire false
+team modify atrjob.red friendlyFire false
+team modify atrjob.yellow friendlyFire false
+team modify atrjob.green friendlyFire false
 
 tellraw @a "[atrjob]ゲームロード完了!"
 #stone_sword [101=sword_iron 102=mine_coal 103=splaer_diamond 104=archer_emerald 105=pharmacist_potion 106=wizard_lapis 107=fighter_gold]

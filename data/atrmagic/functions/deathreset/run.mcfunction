@@ -30,8 +30,11 @@
   tag @s remove swordskill9attack_4
   tag @s remove swordskill9ef_3.0
   tag @s remove swordskill9ef_4.0
+  tag @s remove atrjob.fire1
+  tag @s remove atrjob.fire2
+  tag @s remove atrjob.fire3
  #kill
-  kill @e[tag=swordskill4ef.armorstand,limit=1,sort=nearest,distance=..1.5]
+  kill @e[tag=swordskill4ef.armorstand,limit=1,sort=nearest,distance=..10]
 
  #score
   scoreboard players reset @s swordskill4ef
@@ -41,6 +44,8 @@
   scoreboard players reset @s swordskill8now
   scoreboard players reset @s swordskill9now
   scoreboard players reset @s swordskill9re
+  scoreboard players reset @s atrjob.firetick
+  scoreboard players reset @s atrjob.firedamagetick
   scoreboard players set @s swordskill9_ 1
 
  #リセット

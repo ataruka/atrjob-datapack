@@ -4,8 +4,21 @@
  tag @s add atrsword9now_4
  tag @s add swordskill9_4
 #damagetagadd
- execute anchored eyes if score pvp atrjobsetting matches 1 at @s positioned ^ ^ ^ run tag @a[distance=..5,tag=!swordskill9attack_4,gamemode=!spectator,gamemode=!creative] add swordskill9ef_4
- execute as @s at @s anchored eyes positioned ^ ^ ^ run tag @e[type=!#atrmagic:non_living,distance=..5,type=!player] add swordskill9ef_4
+ execute if score team atrjobsetting matches 0 if score pvp atrjobsetting matches 1 at @s anchored eyes positioned ^ ^ ^ run tag @a[distance=..6,tag=!swordskill9attack_4,gamemode=!spectator,gamemode=!creative] add swordskill9ef_4
+ execute if score team atrjobsetting matches 0 at @s anchored eyes positioned ^ ^ ^ run tag @e[type=!#atrmagic:non_living,distance=..6,type=!player] add swordskill9ef_4
+#チーム戦のtag付与
+ execute if score team atrjobsetting matches 1 if entity @s[team=atrjob.blue] if score pvp atrjobsetting matches 1 at @s anchored eyes positioned ^ ^ ^ run tag @a[distance=..6,tag=!swordskill9attack_4,gamemode=!spectator,gamemode=!creative,team=!atrjob.blue] add swordskill9ef_4
+ execute if score team atrjobsetting matches 1 if entity @s[team=atrjob.green] if score pvp atrjobsetting matches 1 at @s anchored eyes positioned ^ ^ ^ run tag @a[distance=..6,tag=!swordskill9attack_4,gamemode=!spectator,gamemode=!creative,team=!atrjob.green] add swordskill9ef_4
+ execute if score team atrjobsetting matches 1 if entity @s[team=atrjob.red] if score pvp atrjobsetting matches 1 at @s anchored eyes positioned ^ ^ ^ run tag @a[distance=..6,tag=!swordskill9attack_4,gamemode=!spectator,gamemode=!creative,team=!atrjob.red] add swordskill9ef_4
+ execute if score team atrjobsetting matches 1 if entity @s[team=atrjob.yellow] if score pvp atrjobsetting matches 1 at @s anchored eyes positioned ^ ^ ^ run tag @a[distance=..6,tag=!swordskill9attack_4,gamemode=!spectator,gamemode=!creative,team=!atrjob.yellow] add swordskill9ef_4
+ execute if score team atrjobsetting matches 1 if entity @s[team=!atrjob.blue,team=!atrjob.green,team=!atrjob.red,team=!atrjob.yellow] if score pvp atrjobsetting matches 1 at @s anchored eyes positioned ^ ^ ^ run tag @a[distance=..6,tag=!swordskill9attack_4,gamemode=!spectator,gamemode=!creative] add swordskill9ef_4
+
+ execute if score team atrjobsetting matches 1 if entity @s[team=atrjob.blue] at @s anchored eyes positioned ^ ^ ^ run tag @e[type=!#atrmagic:non_living,distance=..6,type=!player,team=!atrjob.blue] add swordskill9ef_4
+ execute if score team atrjobsetting matches 1 if entity @s[team=atrjob.green] at @s anchored eyes positioned ^ ^ ^ run tag @e[type=!#atrmagic:non_living,distance=..6,type=!player,team=!atrjob.green] add swordskill9ef_4
+ execute if score team atrjobsetting matches 1 if entity @s[team=atrjob.red] at @s anchored eyes positioned ^ ^ ^ run tag @e[type=!#atrmagic:non_living,distance=..6,type=!player,team=!atrjob.red] add swordskill9ef_4
+ execute if score team atrjobsetting matches 1 if entity @s[team=atrjob.yellow] at @s anchored eyes positioned ^ ^ ^ run tag @e[type=!#atrmagic:non_living,distance=..6,type=!player,team=!atrjob.yellow] add swordskill9ef_4
+ execute if score team atrjobsetting matches 1 if entity @s[team=!atrjob.blue,team=!atrjob.green,team=!atrjob.red,team=!atrjob.yellow] at @s anchored eyes positioned ^ ^ ^ run tag @e[type=!#atrmagic:non_living,distance=..6,type=!player] add swordskill9ef_4
+#tagにtagを付与
  tag @e[tag=swordskill9ef_4] add swordskill9ef_4.0
 #パーティクルと音
  playsound minecraft:entity.generic.explode master @a ~ ~ ~ 2 2 0
@@ -14,9 +27,11 @@
 #effect
  effect give @s levitation 3 128 true
 #damage
- data modify storage score_damage: Argument set value {Damage:20.00,DamageType:"Fire"}
- execute as @e[tag=swordskill9ef_4] at @s run function score_damage:api/attack
- data remove storage score_damage: Argument
+ data modify storage atrscore_damage: Argument set value {Damage:20.00,DamageType:"Fire"}
+ execute as @e[tag=swordskill9ef_4] at @s run function atrmagic:damage/run
+ execute as @e[tag=swordskill9ef_4] run scoreboard players set @s atrjob.firetick 240
+ execute as @e[tag=swordskill9ef_4] run tag @s add atrjob.fire1
+ data remove storage atrscore_damage: Argument
  tag @e[tag=swordskill9ef_4] remove swordskill9ef_4
  tag @s remove swordskill9attack_4
 #アイテム置き換え

@@ -20,13 +20,16 @@
   execute as @e[tag=swordskill4ef,type=!player] at @s run data merge entity @s {NoAI:true}
   execute as @e[tag=swordskill4ef,type=!player,scores={swordskill4ef=..0}] at @s run data merge entity @s {NoAI:false}
   execute as @e[tag=swordskill4ef] at @s run particle minecraft:dust 0 0 0 3 ~ ~1 ~ 0.5 0.5 0.5 0 1
-  execute as @e[tag=swordskill4ef] at @s run tp @e[distance=0.2,sort=nearest,limit=1]
+  execute as @e[tag=swordskill4ef] at @s run tp @e[tag=swordskill4ef.armorstand,distance=..0.5,sort=nearest,limit=1]
+  execute as @a[tag=swordskill4ef] at @s unless entity @e[tag=swordskill4ef.armorstand,distance=..0.5] run summon armor_stand ~ ~ ~ {Marker:1b,Tags:["swordskill4ef.armorstand"],Invisible:1b}
+  execute as @a[tag=swordskill4ef.armorstand] at @s unless entity @e[tag=swordskill4ef,distance=..0.5] run kill @s
+  execute as @a[tag=swordskill4ef,scores={swordskill4ef=60}] at @s run execute as @e[tag=swordskill4ef.armorstand] at @s run data modify entity @s Rotation set from entity @a[distance=..0.0,limit=1,sort=nearest] Rotation
  #clear
   execute as @e[scores={swordjobCT4=..0},tag=atrswordct4] at @s run playsound minecraft:block.smithing_table.use master @s ~ ~ ~ 2 1 0
   execute as @e[scores={swordjobCT4=..0},tag=atrswordct4] run tag @s remove atrswordct4
   execute as @e[scores={swordjobCT4=..0}] run scoreboard players reset @s swordjobCT4
   execute as @e[scores={swordskill4ef=..0},tag=swordskill4ef] at @s run particle minecraft:dust 1 1 1 1 ~ ~1 ~ 0.5 0.5 0.5 0 100 force
-  execute as @e[scores={swordskill4ef=..0},tag=swordskill4ef] at @s run kill @e[tag=swordskill4ef.armorstand,distance=..0.2,limit=1,sort=nearest]
+  execute as @e[scores={swordskill4ef=..0},tag=swordskill4ef] at @s run kill @e[tag=swordskill4ef.armorstand,distance=..1,limit=5,sort=nearest]
   execute as @e[scores={swordskill4ef=..0},tag=swordskill4ef] run tag @s remove swordskill4ef
   execute as @e[scores={swordskill4ef=..0}] run scoreboard players reset @s swordskill4ef
 
@@ -104,7 +107,7 @@
  #damage
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s run scoreboard players add @s swordskill8damage 40
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..,swordskill8damage=500..},nbt={OnGround:1b}] at @s run scoreboard players set @s swordskill8damage 500
-  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s store result storage score_damage: Argument.Damage double 0.2 run scoreboard players get @s swordskill8damage
+  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s store result storage atrscore_damage: Argument.Damage double 0.2 run scoreboard players get @s swordskill8damage
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s run tag @s add swordskill8attack
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b},tag=swordskill8_3m] at @s run execute if score pvp atrjobsetting matches 1 run tag @a[distance=..3.5,tag=!swordskill8attack,gamemode=!spectator,gamemode=!creative] add swordskill8ef
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b},tag=swordskill8_3m] at @s run tag @e[type=!#atrmagic:non_living,distance=..3.5,type=!player] add swordskill8ef
@@ -130,10 +133,15 @@
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b},tag=swordskill8_25m] at @s run tag @e[type=!#atrmagic:non_living,distance=..27,type=!player] add swordskill8ef
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b},tag=swordskill8_30m] at @s run execute if score pvp atrjobsetting matches 1 run tag @a[distance=..50,tag=!swordskill8attack,gamemode=!spectator,gamemode=!creative] add swordskill8ef
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b},tag=swordskill8_30m] at @s run tag @e[type=!#atrmagic:non_living,distance=..50,type=!player] add swordskill8ef
-  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s run execute as @e[tag=swordskill8ef,predicate=!atrmagic:effect/invincible] at @s run function score_damage:api/attack
-  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s if entity @e[tag=swordskill8ef,predicate=atrmagic:effect/invincible] run data modify storage score_damage: Argument.BypassResistance set value true
-  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s run execute as @e[tag=swordskill8ef,predicate=atrmagic:effect/invincible] at @s run function score_damage:api/attack
-  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s run data remove storage score_damage: Argument
+  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s if score team atrjobsetting matches 1 if entity @s[team=atrjob.blue] run tag @e[team=atrjob.blue] remove swordskill8ef
+  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s if score team atrjobsetting matches 1 if entity @s[team=atrjob.green] run tag @e[team=atrjob.green] remove swordskill8ef
+  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s if score team atrjobsetting matches 1 if entity @s[team=atrjob.red] run tag @e[team=atrjob.red] remove swordskill8ef
+  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s if score team atrjobsetting matches 1 if entity @s[team=atrjob.yellow] run tag @e[team=atrjob.yellow] remove swordskill8ef
+  
+  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s run execute as @e[tag=swordskill8ef,predicate=!atrmagic:effect/invincible] at @s run function atrmagic:damage/run
+  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s if entity @e[tag=swordskill8ef,predicate=atrmagic:effect/invincible] run data modify storage atrscore_damage: Argument.BypassResistance set value true
+  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s run execute as @e[tag=swordskill8ef,predicate=atrmagic:effect/invincible] at @s run function atrmagic:damage/run
+  execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s run data remove storage atrscore_damage: Argument
  #clear
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s run tag @e remove swordskill8ef
   execute as @a[tag=atrsword8now,scores={swordskill8now=20..},nbt={OnGround:1b}] at @s run tag @e remove swordskill8attack
@@ -175,6 +183,7 @@
    execute as @a[scores={swordskill9now_4=..10},tag=swordskill9_4] at @s unless block ~ ~-2 ~ air run effect clear @s levitation
    execute as @a[tag=swordskill9.0_4] run gamerule fallDamage true
    execute as @a[tag=swordskill9.0_4] run tag @s remove swordskill9.0_4
+   execute as @a[scores={swordskill8now_4=..10},tag=swordskill9_4,nbt={OnGround:1b}] run effect clear @s levitation
    execute as @a[scores={swordskill9now_4=..10},tag=swordskill9_4,nbt={OnGround:1b}] at @s run tag @s add swordskill9.0_4
    execute as @a[scores={swordskill9now_4=..10},tag=swordskill9_4] at @s unless block ~ ~-1 ~ air run tag @s add swordskill9.0_4
    execute as @a[tag=swordskill9.0_4] run gamerule fallDamage false
@@ -187,13 +196,17 @@
     #damage_9.3
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run execute anchored eyes if score pvp atrjobsetting matches 1 at @s rotated ~ 0 positioned ^ ^ ^2 run tag @a[distance=..2.5,tag=!swordskill9attack_2,gamemode=!spectator,gamemode=!creative] add swordskill9ef_3
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run execute as @s at @s anchored eyes rotated ~ 0 positioned ^ ^ ^2 run tag @e[type=!#atrmagic:non_living,distance=..2.5,type=!player] add swordskill9ef_3
+     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s if score team atrjobsetting matches 1 if entity @s[team=atrjob.blue] run tag @e[team=atrjob.blue] remove swordskill9ef_3
+     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s if score team atrjobsetting matches 1 if entity @s[team=atrjob.green] run tag @e[team=atrjob.green] remove swordskill9ef_3
+     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s if score team atrjobsetting matches 1 if entity @s[team=atrjob.red] run tag @e[team=atrjob.red] remove swordskill9ef_3
+     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s if score team atrjobsetting matches 1 if entity @s[team=atrjob.yellow] run tag @e[team=atrjob.yellow] remove swordskill9ef_3
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] run execute as @e[tag=swordskill9ef_3] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:25b,Amplifier:25b,Duration:6,ShowParticles:0b}]}
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] run execute as @e[tag=swordskill9ef_3] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:28b,Amplifier:25b,Duration:30,ShowParticles:0b}]}
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:25b,Amplifier:25b,Duration:6,ShowParticles:0b}]}
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:28b,Amplifier:0b,Duration:60,ShowParticles:0b}]}
-     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run data modify storage score_damage: Argument set value {Damage:10.00}
-     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run execute as @e[tag=swordskill9ef_3] at @s run function score_damage:api/attack
-     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run data remove storage score_damage: Argument
+     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run data modify storage atrscore_damage: Argument set value {Damage:10.00}
+     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run execute as @e[tag=swordskill9ef_3] at @s run function atrmagic:damage/run
+     execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run data remove storage atrscore_damage: Argument
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run tag @e[tag=swordskill9ef_3] remove swordskill9ef_3
      execute as @a[tag=swordskill9attack_3,scores={swordskill9now=10}] at @s run tag @s remove swordskill9attack_3
    execute as @a[scores={swordskill9re=..0,swordskill9_=2..4}] at @s run playsound minecraft:item.axe.scrape master @s ~ ~ ~ 1 2
