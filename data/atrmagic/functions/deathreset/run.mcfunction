@@ -33,6 +33,12 @@
   tag @s remove atrjob.fire1
   tag @s remove atrjob.fire2
   tag @s remove atrjob.fire3
+  tag @s remove atrjob.water1
+  tag @s remove atrjob.water2
+  tag @s remove atrjob.water3
+  tag @s remove atrjob.thunder1
+  tag @s remove atrjob.thunder2
+  tag @s remove atrjob.thunder3
  #kill
   kill @e[tag=swordskill4ef.armorstand,limit=1,sort=nearest,distance=..10]
 
@@ -46,6 +52,10 @@
   scoreboard players reset @s swordskill9re
   scoreboard players reset @s atrjob.firetick
   scoreboard players reset @s atrjob.firedamagetick
+  scoreboard players reset @s atrjob.watertick
+  scoreboard players reset @s atrjob.waterdamagetick
+  scoreboard players reset @s atrjob.thundertick
+  scoreboard players reset @s atrjob.thunderdamagetick
   scoreboard players set @s swordskill9_ 1
 
  #リセット
