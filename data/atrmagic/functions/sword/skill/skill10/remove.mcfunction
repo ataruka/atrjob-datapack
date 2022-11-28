@@ -1,0 +1,10 @@
+scoreboard players reset @s swordjobskill10.SC1
+scoreboard players reset @s swordjobskill10.SC2
+scoreboard players reset @s swordjobskill10.SC3
+scoreboard players reset @s swordjobskill10.SC4
+scoreboard players reset @s swordjobskill10.SC5
+scoreboard players reset @s swordjobskill10.SC6
+scoreboard players reset @s swordjobskill10.SC7
+scoreboard players reset @s swordjobskill10.SC8
+scoreboard players reset @s swordjobskill10.SC9
+scoreboard players reset @s swordjobskill10.SC10

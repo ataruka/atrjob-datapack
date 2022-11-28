@@ -1,17 +1,17 @@
-#剣士のスキル1-鋭刃
+# 剣士のスキル1-鋭刃
  execute as @a[tag=atrswordjob,predicate=atrmagic:has_item/have_sword,scores={swordjobskill1=1}] at @s run function atrmagic:sword/skill/skill1
  execute as @a[tag=atrswordjob,predicate=!atrmagic:has_item/have_sword,scores={swordjobskill1=0..}] at @s run attribute @s generic.attack_damage modifier remove 51279ba1-3855-4b82-8996-3b1482416791
 
-#剣士のスキル2[5]-背水の陣I~背水の陣II
+# 剣士のスキル2[5]-背水の陣I~背水の陣II
  execute as @a[tag=atrswordjob,scores={swordjobskill2=1}] at @s if score @s atrhealth < @s atrhalfHealth run function atrmagic:sword/skill/skill2
  execute as @a[tag=atrswordjob,scores={swordjobskill2=0..}] at @s if score @s atrhealth > @s atrhalfHealth run attribute @s generic.movement_speed modifier remove 6bee7b27-848a-4afd-92b6-166706dba79a
  execute as @a[tag=atrswordjob,scores={swordjobskill2=0..}] at @s if score @s atrhealth > @s atrhalfHealth run attribute @s generic.attack_damage modifier remove 315e2dcf-ca56-4e1a-b568-9425475200bb
 
-#剣士のスキル3-静滴
+# 剣士のスキル3-静滴
  execute as @a[tag=atrswordjob,predicate=atrmagic:has_item/have_sword,scores={swordjobskill3=1}] at @s run function atrmagic:sword/skill/skill3
  execute as @a[tag=atrswordjob,predicate=!atrmagic:has_item/have_sword,scores={swordjobskill3=0..}] at @s run attribute @s generic.movement_speed modifier remove 68332437-288a-4ddd-a7b6-d67e669e8138
 
-#剣士のスキル4-峰打ち => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
+# 剣士のスキル4-峰打ち => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
  #tick
   scoreboard players remove @a[tag=atrswordct4] swordjobCT4 1
   scoreboard players remove @e[tag=swordskill4ef] swordskill4ef 1
@@ -33,10 +33,10 @@
   execute as @e[scores={swordskill4ef=..0},tag=swordskill4ef] run tag @s remove swordskill4ef
   execute as @e[scores={swordskill4ef=..0}] run scoreboard players reset @s swordskill4ef
 
-#剣士のスキル5-背水の陣II
+# 剣士のスキル5-背水の陣II
  #上にあります
 
-#剣士のスキル6-斬撃 => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
+# 剣士のスキル6-斬撃 => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
  #tick
   scoreboard players remove @a[tag=atrswordct6] swordjobCT6 1
   scoreboard players remove @a[tag=atrsword6now] swordskill6now 1
@@ -59,11 +59,11 @@
   execute as @e[scores={swordskill6now=..0},tag=atrsword6now] run tag @s remove atrsword6now
   execute as @e[scores={swordskill6now=..0}] run scoreboard players reset @s swordskill6now
 
-#剣士のスキル7-忍耐
+# 剣士のスキル7-忍耐
  execute as @a[tag=atrswordjob,scores={swordjobskill7=1}] at @s run function atrmagic:sword/skill/skill7
  execute as @a[tag=atrswordjob,scores={swordjobskill7=0}] at @s run attribute @s generic.max_health modifier remove cfe52cd1-4410-4f1f-b695-c78d5474c8ab
 
-#剣士のスキル8-剣撃渦台 => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
+# 剣士のスキル8-剣撃渦台 => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
  #tick
   scoreboard players remove @a[tag=atrswordct8] swordjobCT8 1
   scoreboard players add @a[tag=atrsword8now] swordskill8now 1
@@ -163,7 +163,7 @@
   execute as @e[scores={swordjobCT8=..0},tag=atrswordct8] at @s run playsound minecraft:splatoonseries.specialcharge master @s ~ ~ ~ 2 1
   execute as @e[scores={swordjobCT8=..0},tag=atrswordct8] run tag @s remove atrswordct8
   execute as @e[scores={swordjobCT8=..0}] run scoreboard players reset @s swordjobCT8
-#剣士のスキル9-連鎖撃 => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
+# 剣士のスキル9-連鎖撃 => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
   #tick
    scoreboard players remove @a[tag=atrsword9now] swordskill9now 1
    scoreboard players remove @a[tag=atrsword9now_4] swordskill9now_4 1
@@ -231,7 +231,78 @@
    execute as @a[tag=atrswordct9,scores={swordjobCT9=..0}] run tag @s remove atrswordct9
    execute as @a[scores={swordjobCT9=..0}] run scoreboard players reset @s swordjobCT9
    execute as @a[scores={swordskill9re=..0}] run scoreboard players reset @s swordskill9re
-#剣士のスキル10-コンボ => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
+# 剣士のスキル10-コンボ => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
   #tick
    scoreboard players remove @a[tag=atrswordct10] swordjobCT10 1
-   scoreboard players remove @a[tag=atrsword10now_1] swordskill10now_1 1
+   scoreboard players remove @a[scores={swordskill10now=1..}] swordskill10now 1
+   scoreboard players remove @a[scores={swordskill10re=1..}] swordskill10re 1
+   scoreboard players remove @e[tag=atrjob.swordskill10_2] swordskill10_2.armortick 1
+   scoreboard players remove @e[tag=atrjob.swordskill10_4] swordskill10_4.armortick 1
+  #run-1(通常)
+  #run-2(後退)
+   execute as @e[tag=atrjob.swordskill10_2] run item replace entity @s armor.head with stone_shovel{CustomModelData:111}
+   execute as @e[tag=atrjob.swordskill10_2] at @s run function atrmagic:particle/sword/skill10/skill10_2_armor
+   execute as @e[tag=atrjob.swordskill10_2] at @s if block ^ ^ ^1.5 #atrmagic:no_collision run tp @s ^ ^ ^1.5 
+   execute as @e[tag=atrjob.swordskill10_2] at @s unless block ^ ^ ^1.5 #atrmagic:no_collision run tp @s ~ ~-1000 ~
+   execute as @e[tag=atrjob.swordskill10_2] at @s unless block ^ ^ ^1.5 #atrmagic:no_collision run kill @s
+   execute as @e[tag=atrjob.swordskill10_2] at @s run function atrmagic:sword/skill/skill10_2_armor
+   execute as @e[tag=atrjob.swordskill10_2] at @s if entity @e[distance=..1.5,type=!#atrmagic:non_living] run kill @s
+  #run-3(空中)
+  #run-4(空中後退)
+   execute as @e[tag=atrjob.swordskill10_4] run item replace entity @s armor.head with stone_shovel{CustomModelData:112}
+   execute as @e[tag=atrjob.swordskill10_4] at @s run function atrmagic:particle/sword/skill10/skill10_4_armor
+   execute as @e[tag=atrjob.swordskill10_4] at @s if block ^ ^ ^1.5 #atrmagic:no_collision run tp @s ^ ^ ^1.5
+   execute as @e[tag=atrjob.swordskill10_4] at @s unless block ^ ^ ^1.5 #atrmagic:no_collision run tp @s ~ ~-1000 ~
+   execute as @e[tag=atrjob.swordskill10_4] at @s unless block ^ ^ ^1.5 #atrmagic:no_collision run kill @s
+   execute as @e[tag=atrjob.swordskill10_4] at @s run function atrmagic:sword/skill/skill10_4_armor
+  #run-5(重撃)
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=25}] at @s run function atrmagic:sword/skill/skill10_5_2-4
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=25}] at @s run playsound minecraft:entity.player.attack.sweep master @a ~ ~ ~ 2 2 0
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=25}] at @s run function atrmagic:particle/sword/skill10/skill10_5_2
+
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=20}] at @s run function atrmagic:sword/skill/skill10_5_2-4
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=20}] at @s run playsound minecraft:entity.player.attack.sweep master @a ~ ~ ~ 2 2 0
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=20}] at @s run function atrmagic:particle/sword/skill10/skill10_5_3
+
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=15}] at @s run function atrmagic:sword/skill/skill10_5_2-4
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=15}] at @s run playsound minecraft:entity.player.attack.sweep master @a ~ ~ ~ 2 2 0
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=15}] at @s run function atrmagic:particle/sword/skill10/skill10_5_4
+
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=0}] at @s run function atrmagic:sword/skill/skill10_5_5
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=0}] at @s run playsound minecraft:entity.player.attack.sweep master @a ~ ~ ~ 2 1 0
+   execute as @a[tag=atrsword10now_5,scores={swordskill10now=0}] at @s run function atrmagic:particle/sword/skill10/skill10_5_5
+  #run-6(しゃがみ防御)
+   execute as @a[tag=atrsword10now_6,scores={swordskill10now=0..},nbt=!{ActiveEffects:[{Id:10}]}] at @s run effect give @s regeneration 3 1 true
+   execute as @a[tag=atrsword10now_6,scores={swordskill10now=0..},nbt=!{ActiveEffects:[{Id:11}]}] at @s run effect give @s resistance 3 1 true
+  #clear
+    #1(通常)
+     tag @a[tag=atrsword10now_1,scores={swordskill10now=..0}] remove atrsword10now_1
+    #2(後退)
+     tag @a[tag=atrsword10now_2,scores={swordskill10now=..0}] remove atrsword10now_2
+    #3(空中)
+     tag @a[tag=atrsword10now_3,scores={swordskill10now=..0}] remove atrsword10now_3
+    #4(空中後退)
+     tag @a[tag=atrsword10now_4,scores={swordskill10now=..0}] remove atrsword10now_4
+    #5(重撃)
+     tag @a[tag=atrsword10now_5,scores={swordskill10now=..0}] remove atrsword10now_5
+    #6(しゃがみ防御)
+     tag @a[tag=atrsword10now_6,scores={swordskill10now=..0}] remove atrsword10now_6
+   scoreboard players reset @a[scores={swordskill10now=..0}] swordskill10now
+    #コンボ戻る
+     execute as @a[scores={swordskill10re=..0}] run function atrmagic:sword/skill/skill10/remove
+     execute as @a[scores={swordskill10re=..0}] at @s run playsound minecraft:item.axe.scrape master @s ~ ~ ~ 1 2
+     execute as @a[scores={swordskill10re=..0}] at @s run playsound minecraft:item.axe.scrape master @s ~ ~ ~ 1 2
+     execute as @a[scores={swordskill10re=..0}] at @s run playsound minecraft:item.axe.scrape master @s ~ ~ ~ 1 2
+     execute as @a[scores={swordskill10re=..0}] at @s run playsound minecraft:item.axe.scrape master @s ~ ~ ~ 1 2
+     execute as @a[scores={swordskill10re=..0}] at @s run playsound minecraft:item.axe.scrape master @s ~ ~ ~ 1 2
+     execute as @a[scores={swordskill10re=..0}] at @s run playsound minecraft:item.axe.scrape master @s ~ ~ ~ 1 2
+     scoreboard players reset @a[scores={swordskill10re=..0}] swordskill10re
+   tag @a[tag=atrswordct10,scores={swordjobCT10=..0}] remove atrswordct10
+   scoreboard players reset @a[scores={swordjobCT10=..0}] swordjobCT10
+    #2(後退)
+     kill @e[tag=atrjob.swordskill10_2,scores={swordskill10_2.armortick=..0}]
+    #4(空中後退)
+     kill @e[tag=atrjob.swordskill10_4,scores={swordskill10_4.armortick=..0}]
+   
+#execute as @a[scores={atrjob.ZFacing=1}] run say 前に進んでるよー
+#execute as @a[scores={atrjob.ZFacing=-1}] run say 後ろに進んでるよー

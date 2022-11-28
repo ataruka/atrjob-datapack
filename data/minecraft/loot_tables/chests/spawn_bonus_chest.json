@@ -32,7 +32,7 @@
             },
             {
               "function": "minecraft:set_nbt",
-              "tag": "{HideFlags:127,RepairCost:100000,Unbreakable:1b,CustomModelData:101,atrmagic:1b,atrmagicdata:1b,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:0,Operation:0,UUID:[I;-946203104,290604478,-1293276245,-577265581],Slot:\"mainhand\"},{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0,Operation:0,UUID:[I;-1830642924,-1157608579,-1366497668,-1664759561],Slot:\"mainhand\"}]}"
+              "tag": "{HideFlags:127,RepairCost:40,Unbreakable:1b,CustomModelData:101,atrjob:1b,atrjobdata:1b,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:0,Operation:0,UUID:[I;-946203104,290604478,-1293276245,-577265581],Slot:\"mainhand\"},{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0,Operation:0,UUID:[I;-1830642924,-1157608579,-1366497668,-1664759561],Slot:\"mainhand\"}]}"
             }
           ]
         },
@@ -66,7 +66,7 @@
             },
             {
               "function": "minecraft:set_nbt",
-              "tag": "{HideFlags:127,RepairCost:100000,Unbreakable:1b,CustomModelData:102,atrmagic:1b,atrmagicdata:2b,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:0,Operation:0,UUID:[I;-946203104,290604478,-1293276245,-577265581],Slot:\"mainhand\"},{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0,Operation:0,UUID:[I;-1830642924,-1157608579,-1366497668,-1664759561],Slot:\"mainhand\"}]}"
+              "tag": "{HideFlags:127,RepairCost:40,Unbreakable:1b,CustomModelData:102,atrjob:1b,atrjobdata:2b,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:0,Operation:0,UUID:[I;-946203104,290604478,-1293276245,-577265581],Slot:\"mainhand\"},{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0,Operation:0,UUID:[I;-1830642924,-1157608579,-1366497668,-1664759561],Slot:\"mainhand\"}]}"
             }
           ]
         }
@@ -104,7 +104,7 @@
             },
             {
               "function": "minecraft:set_nbt",
-              "tag": "{HideFlags:127,RepairCost:100000,Unbreakable:1b,CustomModelData:103,atrmagic:1b,atrmagicdata:3b,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:0,Operation:0,UUID:[I;-946203104,290604478,-1293276245,-577265581],Slot:\"mainhand\"},{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0,Operation:0,UUID:[I;-1830642924,-1157608579,-1366497668,-1664759561],Slot:\"mainhand\"}]}"
+              "tag": "{HideFlags:127,RepairCost:40,Unbreakable:1b,CustomModelData:103,atrjob:1b,atrjobdata:3b,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:0,Operation:0,UUID:[I;-946203104,290604478,-1293276245,-577265581],Slot:\"mainhand\"},{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0,Operation:0,UUID:[I;-1830642924,-1157608579,-1366497668,-1664759561],Slot:\"mainhand\"}]}"
             }
           ]
         },
@@ -137,7 +137,7 @@
             },
             {
               "function": "minecraft:set_nbt",
-              "tag": "{HideFlags:127,RepairCost:100000,Unbreakable:1b,CustomModelData:104,atrmagic:1b,atrmagicdata:4b,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:0,Operation:0,UUID:[I;-946203104,290604478,-1293276245,-577265581],Slot:\"mainhand\"},{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0,Operation:0,UUID:[I;-1830642924,-1157608579,-1366497668,-1664759561],Slot:\"mainhand\"}]}"
+              "tag": "{HideFlags:127,RepairCost:40,Unbreakable:1b,CustomModelData:104,atrjob:1b,atrjobdata:4b,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:0,Operation:0,UUID:[I;-946203104,290604478,-1293276245,-577265581],Slot:\"mainhand\"},{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0,Operation:0,UUID:[I;-1830642924,-1157608579,-1366497668,-1664759561],Slot:\"mainhand\"}]}"
             }
           ]
         }
