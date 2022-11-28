@@ -231,3 +231,7 @@
    execute as @a[tag=atrswordct9,scores={swordjobCT9=..0}] run tag @s remove atrswordct9
    execute as @a[scores={swordjobCT9=..0}] run scoreboard players reset @s swordjobCT9
    execute as @a[scores={swordskill9re=..0}] run scoreboard players reset @s swordskill9re
+#剣士のスキル10-コンボ => atrmagic/function/trigger/use/carrot_on_a_stickここにあります
+  #tick
+   scoreboard players remove @a[tag=atrswordct10] swordjobCT10 1
+   scoreboard players remove @a[tag=atrsword10now_1] swordskill10now_1 1

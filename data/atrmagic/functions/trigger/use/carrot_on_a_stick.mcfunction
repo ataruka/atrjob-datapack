@@ -26,5 +26,7 @@ execute as @a[tag=atrswordjob,tag=!atrswordct9,tag=!swordskill4ef,tag=!atrsword9
 execute as @a[tag=atrswordjob,tag=!atrswordct9,tag=!atrsword9now,scores={atrusecoas=1..,swordjobskill9=1,swordskill9_=4},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:9.4d,atrct:0b}}}] at @s run function atrmagic:sword/skill/skill9_4
 execute as @a[tag=atrswordjob,tag=!atrswordct9,tag=!swordskill4ef,tag=!atrsword9now,scores={atrusecoas=1..,swordjobskill9=1,swordskill9_=4},nbt={Inventory:[{Slot:-106b,id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:9.4d,atrct:0b}}]}] at @s run function atrmagic:sword/skill/skill9_4
 
+#剣士のスキル10-コンボ
+execute as @a[tag=atrswordjob,tag=!atrswordct9,tag=!swordskill4ef,scores={atrusecoas=1..,swordjobskill10=1},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:10.1d,atrct:0b}}}] at @s run function atrmagic:sword/skill/skill10_1
 #リセット
 scoreboard players reset * atrusecoas

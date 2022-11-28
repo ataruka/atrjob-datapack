@@ -53,9 +53,6 @@ scoreboard objectives add swordjobskill14 dummy
 scoreboard objectives add swordjobskill15 dummy
 scoreboard objectives add swordjobskill16 dummy
 scoreboard objectives add swordjobskill17 dummy
-scoreboard objectives add swordjobSC1 dummy
-scoreboard objectives add swordjobSC2 dummy
-scoreboard objectives add swordjobSC3 dummy
 scoreboard objectives add swordjobCT4 dummy
 scoreboard objectives add swordskill4ef dummy
 scoreboard objectives add swordjobCT6 dummy
@@ -71,6 +68,19 @@ scoreboard objectives add swordjobCT9 dummy
 scoreboard objectives add swordskill9_ dummy
 scoreboard objectives add swordjobZB minecraft.killed:minecraft.zombie
 scoreboard objectives add swordjobtext dummy
+
+scoreboard objectives add swordjobskill10.SC1 dummy
+scoreboard objectives add swordjobskill10.SC2 dummy
+scoreboard objectives add swordjobskill10.SC3 dummy
+scoreboard objectives add swordjobskill10.SC4 dummy
+scoreboard objectives add swordjobskill10.SC5 dummy
+scoreboard objectives add swordjobskill10.SC6 dummy
+scoreboard objectives add swordjobskill10.SC7 dummy
+scoreboard objectives add swordjobskill10.SC8 dummy
+scoreboard objectives add swordjobskill10.SC9 dummy
+scoreboard objectives add swordjobskill10.SC10 dummy
+scoreboard objectives add swordjobCT10 dummy
+scoreboard objectives add swordskill10now_1 dummy
 #MPの自動回復に使用
 scoreboard objectives add atrMPtime dummy
 #乱数生成に使用
