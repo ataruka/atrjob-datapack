@@ -245,8 +245,7 @@
    execute as @e[tag=atrjob.swordskill10_2] at @s if block ^ ^ ^1.5 #atrmagic:no_collision run tp @s ^ ^ ^1.5 
    execute as @e[tag=atrjob.swordskill10_2] at @s unless block ^ ^ ^1.5 #atrmagic:no_collision run tp @s ~ ~-1000 ~
    execute as @e[tag=atrjob.swordskill10_2] at @s unless block ^ ^ ^1.5 #atrmagic:no_collision run kill @s
-   execute as @e[tag=atrjob.swordskill10_2] at @s run function atrmagic:sword/skill/skill10_2_armor
-   execute as @e[tag=atrjob.swordskill10_2] at @s if entity @e[distance=..1.5,type=!#atrmagic:non_living] run kill @s
+   execute as @e[tag=atrjob.swordskill10_2] at @s if entity @e[distance=..1.5,type=!#atrmagic:non_living,type=!armor_stand] run function atrmagic:sword/skill/skill10_2_armor
   #run-3(空中)
   #run-4(空中後退)
    execute as @e[tag=atrjob.swordskill10_4] run item replace entity @s armor.head with stone_shovel{CustomModelData:112}
@@ -254,7 +253,7 @@
    execute as @e[tag=atrjob.swordskill10_4] at @s if block ^ ^ ^1.5 #atrmagic:no_collision run tp @s ^ ^ ^1.5
    execute as @e[tag=atrjob.swordskill10_4] at @s unless block ^ ^ ^1.5 #atrmagic:no_collision run tp @s ~ ~-1000 ~
    execute as @e[tag=atrjob.swordskill10_4] at @s unless block ^ ^ ^1.5 #atrmagic:no_collision run kill @s
-   execute as @e[tag=atrjob.swordskill10_4] at @s run function atrmagic:sword/skill/skill10_4_armor
+   execute as @e[tag=atrjob.swordskill10_4] at @s if entity @e[distance=..1.5,type=!#atrmagic:non_living,type=!armor_stand] run function atrmagic:sword/skill/skill10_4_armor
   #run-5(重撃)
    execute as @a[tag=atrsword10now_5,scores={swordskill10now=25}] at @s run function atrmagic:sword/skill/skill10_5_2-4
    execute as @a[tag=atrsword10now_5,scores={swordskill10now=25}] at @s run playsound minecraft:entity.player.attack.sweep master @a ~ ~ ~ 2 2 0
@@ -274,6 +273,30 @@
   #run-6(しゃがみ防御)
    execute as @a[tag=atrsword10now_6,scores={swordskill10now=0..},nbt=!{ActiveEffects:[{Id:10}]}] at @s run effect give @s regeneration 3 1 true
    execute as @a[tag=atrsword10now_6,scores={swordskill10now=0..},nbt=!{ActiveEffects:[{Id:11}]}] at @s run effect give @s resistance 3 1 true
+   execute as @a[tag=atrsword10now_6,scores={swordskill10now=50}] at @s run playsound minecraft:entity.zombie.attack_iron_door master @a ~ ~ ~ 2 1.5
+   execute as @a[tag=atrsword10now_6,scores={swordskill10now=50}] at @s run playsound minecraft:item.axe.wax_off master @a ~ ~ ~ 2 2
+   execute as @a[tag=atrsword10now_6,scores={swordskill10now=40}] at @s run playsound minecraft:entity.zombie.attack_iron_door master @a ~ ~ ~ 2 2
+   execute as @a[tag=atrsword10now_6,scores={swordskill10now=40}] at @s run playsound minecraft:item.axe.wax_off master @a ~ ~ ~ 2 2
+   execute as @a[tag=atrsword10now_6,scores={swordskill10now=0..}] at @s run particle dust 1 1 1 1 ~ ~1 ~ 0.5 0.5 0.5 1 3 force
+  #run-7(逆通常)
+  #run-8(滝登り)
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=55}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=50}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=45}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=40}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=35}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=30}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=25}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=20}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=15}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=10}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=5}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @a[tag=atrsword10now_8,scores={swordskill10now=0}] at @s run function atrmagic:sword/skill/skill10_8_1
+   execute as @e[tag=atrsword10now_8,scores={swordskill10now=1..}] at @s run effect give @s levitation 1 5
+   execute as @e[tag=atrsword10now_8,scores={swordskill10now=1..}] at @s run effect give @s slow_falling 2 127 true
+   execute as @e[tag=atrsword10now_8,scores={swordskill10now=1..}] at @s run effect give @s mining_fatigue 1 127 true
+   execute as @e[tag=atrsword10now_8,scores={swordskill10now=0}] at @s run effect clear @s levitation
+   execute as @e[tag=atrsword10now_8,scores={swordskill10now=0}] at @s run effect clear @s mining_fatigue
   #clear
     #1(通常)
      tag @a[tag=atrsword10now_1,scores={swordskill10now=..0}] remove atrsword10now_1
@@ -287,6 +310,10 @@
      tag @a[tag=atrsword10now_5,scores={swordskill10now=..0}] remove atrsword10now_5
     #6(しゃがみ防御)
      tag @a[tag=atrsword10now_6,scores={swordskill10now=..0}] remove atrsword10now_6
+    #7(逆通常)
+     tag @a[tag=atrsword10now_7,scores={swordskill10now=..0}] remove atrsword10now_7
+    #8(滝登り)
+     tag @a[tag=atrsword10now_8,scores={swordskill10now=..0}] remove atrsword10now_8
    scoreboard players reset @a[scores={swordskill10now=..0}] swordskill10now
     #コンボ戻る
      execute as @a[scores={swordskill10re=..0}] run function atrmagic:sword/skill/skill10/remove

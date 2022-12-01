@@ -27,14 +27,40 @@
  data remove storage atrscore_damage: Argument
  tag @e[tag=swordskill10ef_4] remove swordskill10ef_4
  #斬撃飛ばしのアマスタ召喚
- execute anchored eyes rotated ~ 0 run summon armor_stand ^ ^ ^ {Marker:1b,Invisible:1b,Tags:["atrjob.swordskill10_4"]}
- execute if entity @s[team=atrjob.blue] run team join atrjob.blue @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand]
- execute if entity @s[team=atrjob.green] run team join atrjob.green @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand]
- execute if entity @s[team=atrjob.red] run team join atrjob.red @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand]
- execute if entity @s[team=atrjob.yellow] run team join atrjob.yellow @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand]
- execute as @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] at @s rotated as @a[limit=1,sort=nearest,tag=swordskill10attack_4] run tp @s ~ ~ ~ ~ 0
- scoreboard players set @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] swordskill10_4.armortick 20
- execute as @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] at @s run tp ^ ^ ^2
+  execute if entity @s[y_rotation=-22.5..22.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^-0.5 ^ {Rotation:[0F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=22.5..67.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^-0.5 ^ {Rotation:[45F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=67.5..114.9] anchored feet rotated ~ 0 run summon armor_stand ^ ^-0.5 ^ {Rotation:[90F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=115..157.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^-0.5 ^ {Rotation:[135F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=157.5..-157.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^-0.5 ^ {Rotation:[180F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=-157.5..-114.9] anchored feet rotated ~ 0 run summon armor_stand ^ ^-0.5 ^ {Rotation:[-135F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=-115..-67.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^-0.5 ^ {Rotation:[-90F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=-67.5..-22.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^-0.5 ^ {Rotation:[-45F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+ execute if entity @s[team=atrjob.blue] run tag @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] add atrjob.teamblue
+ execute if entity @s[team=atrjob.green] run tag @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] add atrjob.teamgreen
+ execute if entity @s[team=atrjob.red] run tag @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] add atrjob.teamred
+ execute if entity @s[team=atrjob.yellow] run tag @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] add atrjob.teamyellow
+ execute anchored feet run tp @e[limit=1,sort=nearest,tag=atrjob.armor_set,type=armor_stand] ^ ^-0.5 ^ ~ 0
+ scoreboard players set @e[limit=1,sort=nearest,tag=atrjob.armor_set,type=armor_stand] swordskill10_4.armortick 20
+ execute as @e[limit=1,sort=nearest,tag=atrjob.armor_set,type=armor_stand] at @s run tp ^ ^ ^2
+ tag @e[limit=1,sort=nearest,tag=atrjob.armor_set,type=armor_stand] remove atrjob.armor_set
+ tag @s remove swordskill10attack_4
+ #斬撃飛ばしのアマスタ召喚
+  execute if entity @s[y_rotation=-22.5..22.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^1 ^ {Rotation:[0F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=22.5..67.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^1 ^ {Rotation:[45F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=67.5..114.9] anchored feet rotated ~ 0 run summon armor_stand ^ ^1 ^ {Rotation:[90F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=115..157.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^1 ^ {Rotation:[135F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=157.5..-157.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^1 ^ {Rotation:[180F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=-157.5..-114.9] anchored feet rotated ~ 0 run summon armor_stand ^ ^1 ^ {Rotation:[-135F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=-115..-67.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^1 ^ {Rotation:[-90F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+  execute if entity @s[y_rotation=-67.5..-22.4] anchored feet rotated ~ 0 run summon armor_stand ^ ^1 ^ {Rotation:[-45F,0F],Tags:["atrjob.swordskill10_4","atrjob.armor_set"],Marker:1b,Invisible:1b,DisabledSlots:4144959}
+ execute if entity @s[team=atrjob.blue] run tag @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] add atrjob.teamblue
+ execute if entity @s[team=atrjob.green] run tag @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] add atrjob.teamgreen
+ execute if entity @s[team=atrjob.red] run tag @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] add atrjob.teamred
+ execute if entity @s[team=atrjob.yellow] run tag @e[limit=1,sort=nearest,tag=atrjob.swordskill10_4,type=armor_stand] add atrjob.teamyellow
+ execute anchored feet run tp @e[limit=1,sort=nearest,tag=atrjob.armor_set,type=armor_stand] ^ ^1 ^ ~ 0
+ scoreboard players set @e[limit=1,sort=nearest,tag=atrjob.armor_set,type=armor_stand] swordskill10_4.armortick 20
+ execute as @e[limit=1,sort=nearest,tag=atrjob.armor_set,type=armor_stand] at @s run tp ^ ^ ^2
+ tag @e[limit=1,sort=nearest,tag=atrjob.armor_set,type=armor_stand] remove atrjob.armor_set
  tag @s remove swordskill10attack_4
 #打ち上げ
  execute at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0,Age:4,Effects:[{Id:25b,Amplifier:1b,Duration:8,ShowParticles:0b},{Id:28b,Amplifier:0b,Duration:30,ShowParticles:0b}]}

@@ -22,7 +22,7 @@
  playsound minecraft:entity.player.attack.sweep master @a ~ ~ ~ 2 1 0
  function atrmagic:particle/sword/skill10/skill10_1
 #damage
- data modify storage atrscore_damage: Argument set value {Damage:4.00}
+ data modify storage atrscore_damage: Argument set value {Damage:2.00}
  execute as @e[tag=swordskill10ef] at @s run function atrmagic:damage/run
  data remove storage atrscore_damage: Argument
  tag @e[tag=swordskill10ef] remove swordskill10ef

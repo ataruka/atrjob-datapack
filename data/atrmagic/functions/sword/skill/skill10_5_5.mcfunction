@@ -20,9 +20,7 @@
  execute as @e[tag=swordskill10ef_5] at @s run function atrmagic:damage/run
  data remove storage atrscore_damage: Argument
  execute as @e[tag=swordskill10ef_5] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0,Age:4,Effects:[{Id:25b,Amplifier:40b,Duration:3,ShowParticles:0b},{Id:28b,Amplifier:0b,Duration:10,ShowParticles:0b}]}
- scoreboard players set @s swordskill10.slime 35
+ scoreboard players set @e[tag=swordskill10ef_5] swordskill10.slime 20
  execute as @e[tag=swordskill10ef_5] at @s rotated ~ 0 positioned ~ ~ ~ run function atrmagic:sword/skill/skill10/summon_slime
  tag @e[tag=swordskill10ef_5] remove swordskill10ef_5
  tag @s remove swordskill10attack_5
-
- execute as @s at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0,Age:4,Effects:[{Id:11b,Amplifier:4b,Duration:6,ShowParticles:0b}]}
