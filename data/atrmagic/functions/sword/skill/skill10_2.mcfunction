@@ -23,6 +23,11 @@
  function atrmagic:particle/sword/skill10/skill10_2
 #damage
  data modify storage atrscore_damage: Argument set value {Damage:4.00}
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run function atrmagic:sword/skill/skill10/adddamage_1
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 2 1.5
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run function atrmagic:particle/sword/skill10/skill10_12
+ #scoreを引く
+  scoreboard players remove @s[scores={swordskill10_12combo=1..}] swordskill10_12combo 1
  execute as @e[tag=swordskill10ef_2] at @s run function atrmagic:damage/run
  data remove storage atrscore_damage: Argument
  tag @e[tag=swordskill10ef_2] remove swordskill10ef_2

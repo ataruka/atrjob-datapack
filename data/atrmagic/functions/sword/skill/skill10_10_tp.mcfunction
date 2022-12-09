@@ -1,0 +1,2 @@
+execute if entity @s positioned ~ ~-0.1 ~ unless block ~ ~ ~ #atrmagic:no_collision run tp @s ~ ~0.1 ~
+execute if entity @s positioned ~ ~-0.1 ~ if block ~ ~ ~ #atrmagic:no_collision run function atrmagic:sword/skill/skill10_10_tp

@@ -23,6 +23,12 @@
  function atrmagic:particle/sword/skill10/skill10_5_1
 #damage
  data modify storage atrscore_damage: Argument set value {Damage:3.00}
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run function atrmagic:sword/skill/skill10/adddamage_1
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 2 1.5
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run function atrmagic:particle/sword/skill10/skill10_12
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run tag @s add swordskill10_5_12combo
+ #scoreを引く
+  scoreboard players remove @s[scores={swordskill10_12combo=1..}] swordskill10_12combo 1
  execute as @e[tag=swordskill10ef_5] at @s run function atrmagic:damage/run
  data remove storage atrscore_damage: Argument
  execute as @e[tag=swordskill10ef_5] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:2,Amplifier:3b,Duration:30,ShowParticles:0b},{Id:4,Amplifier:127b,Duration:30,ShowParticles:0b}]}
@@ -34,11 +40,12 @@
  setblock 20380 0 20380 air replace
  setblock 20380 0 20380 shulker_box{Items:[{Slot:0b,id:"minecraft:stick",Count:1b}]}
  data modify storage atrjob.item Item set from entity @s SelectedItem
- execute unless entity @s[nbt={SelectedItem:{}}] run data remove storage atrjob.item Item
+ execute unless data storage atrjob.item Item{} run data modify storage atrjob.item Item set value {Slot:0b,id:"minecraft:air",Count:1b}
  data remove storage atrjob.item Item.Slot
  data modify block 20380 0 20380 Items[0] set from storage atrjob.item Item
  loot spawn ~ ~ ~ mine 20380 0 20380 debug_stick
  data remove storage atrjob.item Item
+ tp @e[type=item,limit=1,sort=nearest] @s
  data modify entity @e[type=item,limit=1,sort=nearest] PickupDelay set value 0
  data modify entity @e[type=item,limit=1,sort=nearest] Owner set from entity @s UUID
  execute if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:10d}}]}] run item replace entity @s weapon.offhand with air

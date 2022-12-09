@@ -1,0 +1,1 @@
+attribute @s generic.movement_speed modifier add 7d84d099-3db6-4a02-ac81-4e9402c729a2 "atrswordskill10buff speed+40%" 0.4 multiply

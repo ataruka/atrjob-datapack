@@ -23,7 +23,13 @@
  execute as @s at @s run playsound minecraft:ambient.underwater.enter master @s ~ ~ ~ 2 1
  function atrmagic:particle/sword/skill10/skill10_8
 #damage
- data modify storage atrscore_damage: Argument set value {Damage:6.00}
+ data modify storage atrscore_damage: Argument set value {Damage:6.00,AttackType:"water"}
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run function atrmagic:sword/skill/skill10/adddamage_1
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 2 1.5
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run function atrmagic:particle/sword/skill10/skill10_12
+ execute as @s[scores={swordskill10_12combo=1..}] at @s run tag @s add swordskill10_8_12combo
+ #scoreを引く
+  scoreboard players remove @s[scores={swordskill10_12combo=1..}] swordskill10_12combo 1
  execute as @e[tag=swordskill10ef_8] at @s run function atrmagic:damage/run
  data remove storage atrscore_damage: Argument
  tag @e[tag=swordskill10ef_8] remove swordskill10ef_8
@@ -32,11 +38,12 @@
  setblock 20380 0 20380 air replace
  setblock 20380 0 20380 shulker_box{Items:[{Slot:0b,id:"minecraft:stick",Count:1b}]}
  data modify storage atrjob.item Item set from entity @s SelectedItem
- execute unless entity @s[nbt={SelectedItem:{}}] run data remove storage atrjob.item Item
+ execute unless data storage atrjob.item Item{} run data modify storage atrjob.item Item set value {Slot:0b,id:"minecraft:air",Count:1b}
  data remove storage atrjob.item Item.Slot
  data modify block 20380 0 20380 Items[0] set from storage atrjob.item Item
  loot spawn ~ ~ ~ mine 20380 0 20380 debug_stick
  data remove storage atrjob.item Item
+ tp @e[type=item,limit=1,sort=nearest] @s
  data modify entity @e[type=item,limit=1,sort=nearest] PickupDelay set value 0
  data modify entity @e[type=item,limit=1,sort=nearest] Owner set from entity @s UUID
  execute if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:carrot_on_a_stick",tag:{atrswordjobskill:10d}}]}] run item replace entity @s weapon.offhand with air
@@ -44,7 +51,7 @@
 #score
  scoreboard players set @s swordskill10re 160
  scoreboard players add @s swordskill10now 60
- scoreboard players add @s swordjobCT10 100
+ scoreboard players add @s swordjobCT10 70
 #発動を記録
  function atrmagic:sword/skill/skill10/log
  scoreboard players set @s swordjobskill10.SC1 8

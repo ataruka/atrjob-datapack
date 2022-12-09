@@ -17,7 +17,10 @@
  execute if score team atrjobsetting matches 1 if entity @s[team=!atrjob.blue,team=!atrjob.green,team=!atrjob.red,team=!atrjob.yellow] at @s anchored eyes positioned ^ ^ ^2 run tag @e[type=!#atrmagic:non_living,distance=..3,type=!player] add swordskill10ef_5
 #damage
  data modify storage atrscore_damage: Argument set value {Damage:6.00}
- execute as @e[tag=swordskill10ef_5] at @s run function atrmagic:damage/run
+ execute as @a[tag=swordskill10_5_12combo] at @s run function atrmagic:sword/skill/skill10/adddamage_1
+ execute as @s[tag=swordskill10_5_12combo] at @s run playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 2 2
+ execute as @s[tag=swordskill10_5_12combo] at @s run function atrmagic:particle/sword/skill10/skill10_12
+ execute as @s[tag=swordskill10_5_12combo] at @s run tag @s remove swordskill10_5_12combo
  data remove storage atrscore_damage: Argument
  execute as @e[tag=swordskill10ef_5] at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0,Age:4,Effects:[{Id:25b,Amplifier:40b,Duration:3,ShowParticles:0b},{Id:28b,Amplifier:0b,Duration:10,ShowParticles:0b}]}
  scoreboard players set @e[tag=swordskill10ef_5] swordskill10.slime 20

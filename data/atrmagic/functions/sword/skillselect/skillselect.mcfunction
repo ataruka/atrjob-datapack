@@ -3,8 +3,8 @@ scoreboard players set @s swordjobtext 3
 scoreboard players reset @s atrtrigger.text
 scoreboard players enable @s atrtrigger.text
 tellraw @s {"text":"-----------------------\n            スキル設定\n-----------------------"}
-execute as @a[scores={swordjobLv=5..,swordjobskill11=1}] at @s run tellraw @s [{"text":"[爆裂剣技]","color":"white"},{"text":" 選択済み","color":"gray"}]
-execute as @a[scores={swordjobLv=5..,swordjobskill11=0}] at @s run tellraw @s [{"text":"[爆裂剣技]","color":"white"},{"text":" 選択する","color":"green","clickEvent":{"action":"run_command","value":"/trigger atrtrigger.text set 30"}}]
+execute as @a[scores={swordjobLv=5..,swordjobskill11=1}] at @s run tellraw @s [{"text":"[必中網羅]","color":"white"},{"text":" 選択済み","color":"gray"}]
+execute as @a[scores={swordjobLv=5..,swordjobskill11=0}] at @s run tellraw @s [{"text":"[必中網羅]","color":"white"},{"text":" 選択する","color":"green","clickEvent":{"action":"run_command","value":"/trigger atrtrigger.text set 30"}}]
 execute as @a[scores={swordjobLv=5..,swordjobskill12=0}] at @s run tellraw @s [{"text":"[双六案内]","color":"white"},{"text":" 選択する","color":"green","clickEvent":{"action":"run_command","value":"/trigger atrtrigger.text set 31"}}]
 execute as @a[scores={swordjobLv=5..,swordjobskill12=1}] at @s run tellraw @s [{"text":"[双六案内]","color":"white"},{"text":" 選択済み","color":"gray"}]
 execute as @a[scores={swordjobLv=5..,swordjobskill13=0}] at @s run tellraw @s [{"text":"[敏俊突進]","color":"white"},{"text":" 選択する","color":"green","clickEvent":{"action":"run_command","value":"/trigger atrtrigger.text set 32"}}]

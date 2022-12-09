@@ -1,7 +1,7 @@
 #ゲームルール設定
  gamerule showDeathMessages false
 #tellraw
- tellraw @a [{"selector":"@s"},{"text":"は"},{"text":"ペチッされた"}]
+ tellraw @a [{"selector":"@s"},{"text":"は","color": "white"},{"text":"ペチッされた","color": "white"}]
 #kill
  kill @s
 #score

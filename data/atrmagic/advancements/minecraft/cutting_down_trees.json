@@ -1,0 +1,41 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:iron_axe",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "text": "ききき、木をきります",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    },
+    "description": {
+      "text": "真新しい斧を使い、木をいじめる",
+      "color": "green",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "atrmagic:start",
+  "criteria": {
+    "get_wood_of_axe": {
+      "trigger": "minecraft:impossible",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "get_wood_of_axe"
+    ]
+  ]
+}

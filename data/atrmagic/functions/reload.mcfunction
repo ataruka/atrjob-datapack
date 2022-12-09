@@ -25,6 +25,8 @@ scoreboard objectives add atrjob.thundertick dummy
 scoreboard objectives add atrjob.firedamagetick dummy
 scoreboard objectives add atrjob.waterdamagetick dummy
 scoreboard objectives add atrjob.thunderdamagetick dummy
+# advancement
+scoreboard objectives add atrjob.get_a_log_axe dummy
 # damage
 scoreboard objectives add atrjob.damage dummy
 # 金林檎
@@ -89,11 +91,23 @@ scoreboard objectives add swordjobskill10.SC10 dummy
 scoreboard objectives add swordjobCT10 dummy
 scoreboard objectives add swordjobCT10_ dummy
 scoreboard objectives add swordskill10now dummy
+scoreboard objectives add swordskill10now_10 dummy
 scoreboard objectives add swordskill10re dummy
 scoreboard objectives add swordskill10.slime dummy
 scoreboard objectives add atrjob.slime_Remove dummy
 scoreboard objectives add swordskill10_2.armortick dummy
 scoreboard objectives add swordskill10_4.armortick dummy
+scoreboard objectives add swordskill10_13.armortick dummy
+scoreboard objectives add swordskill10_13.attacktick dummy
+scoreboard objectives add swordskill10_12combo dummy
+scoreboard objectives add swordjobskill10_14_tick dummy
+scoreboard objectives add swordskill10_14.armortick dummy
+
+scoreboard objectives add swordskill11.tick dummy
+scoreboard objectives add swordskill11.armortick dummy
+scoreboard objectives add swordskill11re dummy
+scoreboard objectives add swordjobCT11 dummy
+scoreboard objectives add swordskill11.number dummy
 # MPの自動回復に使用
 scoreboard objectives add atrMPtime dummy
 # 乱数生成に使用
@@ -102,10 +116,32 @@ scoreboard objectives add atrjobrng dummy
 scoreboard objectives add atrjob.falldistance dummy
 # HPを表示固定
 scoreboard objectives setdisplay belowName atrHealth
-# #100のrngスコアを100に設定
-scoreboard players set #100 atrmagicrng 100
-# #2のrngスコアを2に設定
-scoreboard players set #2 atrmagicrng 2
+# rngスコアを設定
+scoreboard players set #100 atrjobrng 100
+scoreboard players set #10 atrjobrng 10
+scoreboard players set #5 atrjobrng 5
+scoreboard players set #4 atrjobrng 4
+scoreboard players set #3 atrjobrng 3
+scoreboard players set #2 atrjobrng 2
+# UUID
+scoreboard objectives add atrjob.UUID0 dummy
+scoreboard objectives add atrjob.UUID1 dummy
+scoreboard objectives add atrjob.UUID2 dummy
+scoreboard objectives add atrjob.UUID3 dummy
+scoreboard objectives add atrjob.swordskill11.UUID0 dummy
+scoreboard objectives add atrjob.swordskill11.UUID1 dummy
+scoreboard objectives add atrjob.swordskill11.UUID2 dummy
+scoreboard objectives add atrjob.swordskill11.UUID3 dummy
+scoreboard objectives add atrjob.Owner0 dummy
+scoreboard objectives add atrjob.Owner1 dummy
+scoreboard objectives add atrjob.Owner2 dummy
+scoreboard objectives add atrjob.Owner3 dummy
+execute as @a at @s unless score @s atrjob.UUID0 matches -2147483648..2147483647 store result score @s atrjob.UUID0 run data get entity @s UUID[0]
+execute as @a at @s unless score @s atrjob.UUID1 matches -2147483648..2147483647 store result score @s atrjob.UUID1 run data get entity @s UUID[1]
+execute as @a at @s unless score @s atrjob.UUID2 matches -2147483648..2147483647 store result score @s atrjob.UUID2 run data get entity @s UUID[2]
+execute as @a at @s unless score @s atrjob.UUID3 matches -2147483648..2147483647 store result score @s atrjob.UUID3 run data get entity @s UUID[3]
+# 計算用のスコアボード
+scoreboard objectives add atrjob.Temporaryrng dummy
 # 開始時にpvpをoff
 execute unless score pvp atrjobsetting matches 0.. run scoreboard players set pvp atrjobsetting 0
 # 開始時にチーム戦をoff

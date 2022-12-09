@@ -1,7 +1,7 @@
 #ゲームルール設定
  gamerule showDeathMessages false
 #tellraw
- tellraw @a [{"selector":"@s"},{"text":"は"},{"selector":"@e[tag=swordskill10attack_2,limit=1,sort=nearest]"},{"text":"にザシュッとやられた"}]
+ tellraw @a [{"selector":"@s"},{"text":"は","color": "white"},{"selector":"@e[tag=swordskill10attack_2,limit=1,sort=nearest]"},{"text":"にザシュッとやられた","color": "white"}]
 #kill
  kill @s
 #score

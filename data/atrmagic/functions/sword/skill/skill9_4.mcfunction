@@ -27,7 +27,7 @@
 #effect
  effect give @s levitation 3 128 true
 #damage
- data modify storage atrscore_damage: Argument set value {Damage:20.00,DamageType:"Fire"}
+ data modify storage atrscore_damage: Argument set value {Damage:20.00,DamageType:"Fire",AttackType:"fire"}
  execute as @e[tag=swordskill9ef_4] at @s run function atrmagic:damage/run
  execute as @e[tag=swordskill9ef_4] run scoreboard players set @s atrjob.firetick 240
  execute as @e[tag=swordskill9ef_4] run tag @s add atrjob.fire1

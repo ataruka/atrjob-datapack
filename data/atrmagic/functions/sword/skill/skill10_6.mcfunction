@@ -10,6 +10,8 @@
  particle dust 1 1 1 1 ~ ~1 ~ 0.5 0.5 0.5 1 30 force
 #damage
  #なし
+ #scoreを引く
+  scoreboard players remove @s[scores={swordskill10_12combo=1..}] swordskill10_12combo 1
 #effect
  summon area_effect_cloud ~ ~0.5 ~ {Radius:0.0f,Duration:6,DurationOnUse:0f,Age:4,Effects:[{Id:2b,Amplifier:2b,Duration:60,ShowParticles:0b}]}
 #アイテム置き換え
@@ -20,4 +22,4 @@
  scoreboard players add @s swordjobCT10 60
 #発動を記録
  function atrmagic:sword/skill/skill10/log
- scoreboard players set @s swordjobskill10.SC1 1
+ scoreboard players set @s swordjobskill10.SC1 6

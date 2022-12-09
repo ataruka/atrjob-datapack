@@ -17,6 +17,9 @@
  execute if score team atrjobsetting matches 1 if entity @s[team=!atrjob.blue,team=!atrjob.green,team=!atrjob.red,team=!atrjob.yellow] at @s anchored eyes positioned ^ ^ ^2 run tag @e[type=!#atrmagic:non_living,distance=..3,type=!player] add swordskill10ef_5
 #damage
  data modify storage atrscore_damage: Argument set value {Damage:3.00}
+ execute as @s[tag=swordskill10_5_12combo] at @s run function atrmagic:sword/skill/skill10/adddamage_1
+ execute as @s[tag=swordskill10_5_12combo] at @s run playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 2 1.5
+ execute as @s[tag=swordskill10_5_12combo] at @s run function atrmagic:particle/sword/skill10/skill10_12
  execute as @e[tag=swordskill10ef_5] at @s run function atrmagic:damage/run
  data remove storage atrscore_damage: Argument
  tag @e[tag=swordskill10ef_5] remove swordskill10ef_5

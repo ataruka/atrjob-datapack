@@ -5,6 +5,6 @@ scoreboard players set @s swordjobskill14 0
 scoreboard players set @s swordjobskill15 0
 scoreboard players set @s swordjobskill16 0
 scoreboard players set @s swordjobskill17 0
-tellraw @s {"text": "爆裂剣技を選択しました！","color": "red"}
-playsound minecraft:entity.generic.explode master @s ~ ~ ~ 1 1 1
+tellraw @s {"text": "必中網羅を選択しました！","color": "white"}
+playsound minecraft:block.dispenser.launch master @s ~ ~ ~ 2 1 1
 function atrmagic:sword/skillselect/skillselect

@@ -39,6 +39,7 @@
   tag @s remove atrjob.thunder1
   tag @s remove atrjob.thunder2
   tag @s remove atrjob.thunder3
+  tag @s remove swordskill10ef_11
  #kill
   kill @e[tag=swordskill4ef.armorstand,limit=1,sort=nearest,distance=..10]
 
@@ -57,6 +58,17 @@
   scoreboard players reset @s atrjob.thundertick
   scoreboard players reset @s atrjob.thunderdamagetick
   scoreboard players set @s swordskill9_ 1
+  scoreboard players set @s swordskill10re 0
+  scoreboard players set @s swordskill10now -1
+  scoreboard players set @s swordjobCT4 0
+  scoreboard players set @s swordjobCT6 0
+  scoreboard players set @s swordjobCT8 0
+  scoreboard players set @s swordjobCT9 0
+  scoreboard players set @s swordjobCT10 0
+
+ #reset_swordskill10
+  function atrmagic:sword/skill/skill10/remove
+  scoreboard players set @s swordskill10_12combo 0
 
  #リセット
   scoreboard players reset @s atrdeathtrigger

@@ -2,6 +2,12 @@
 data modify storage score_damage: Argument set from storage atrscore_damage: Argument
 #Damageの値を100倍でスコアに代入
 execute store result score @s atrjob.damage run data get storage score_damage: Argument.Damage 100
+#属性によってDamageを補正
+execute if data storage score_damage: Argument{AttackType:"grass"} if entity @s[tag=atrcatjob] run function atrmagic:damage/grass_protection/catjob_
+execute if data storage score_damage: Argument{AttackType:"fire"} if entity @s[tag=atrswordjob] run function atrmagic:damage/fire_protection/swordjob_ 
+execute if data storage score_damage: Argument{AttackType:"water"}
+execute if data storage score_damage: Argument{AttackType:"thunder"}
+execute if data storage score_damage: Argument{AttackType:"physics"}
 #Damageを補正
 scoreboard players remove @s[tag=atrtest.2] atrjob.damage 200
 scoreboard players remove @s[tag=atrsword10now_6] atrjob.damage 200

@@ -8,6 +8,7 @@ function atrmagic:sword/tick
 function atrmagic:trigger/tick
 function atrmagic:text/tick
 function atrmagic:abnormal/tick
+function atrjob_advance:tick
 #スライムを消す
  execute as @e[type=magma_cube,tag=atrjob.swordskill.slime] at @s run function atrmagic:trigger/slime_kill
 #スタートの実績解除
