@@ -6,18 +6,20 @@ scoreboard objectives add atrhalfHealth dummy
 # MP
 scoreboard objectives add atrMP dummy
 # kill
-scoreboard objectives add atrkillcount minecraft.custom:minecraft.mob_kills
+scoreboard objectives add atrjob.killcount minecraft.custom:minecraft.mob_kills
 # death-trigger
 scoreboard objectives add atrdeathtrigger deathCount
 # death
-scoreboard objectives add atrdeathcount deathCount
+scoreboard objectives add atrjob.deathcount deathCount
 # trigger
 scoreboard objectives add atrtrigger.text trigger
+# damage
+scoreboard objectives add atrjob.damage_dealt custom:damage_dealt
 # mine
-scoreboard objectives add atrminestone minecraft.mined:minecraft.stone
-scoreboard objectives add atrminecoal minecraft.mined:minecraft.coal_ore
-scoreboard objectives add atrmineiron minecraft.mined:minecraft.iron_ore
-scoreboard objectives add atrminedia minecraft.mined:minecraft.diamond_ore
+scoreboard objectives add atrjob.minestone minecraft.mined:minecraft.stone
+scoreboard objectives add atrjob.minecoal minecraft.mined:minecraft.coal_ore
+scoreboard objectives add atrjob.mineiron minecraft.mined:minecraft.iron_ore
+scoreboard objectives add atrjob.minedia minecraft.mined:minecraft.diamond_ore
 # abnormal(状態異常)
 scoreboard objectives add atrjob.firetick dummy
 scoreboard objectives add atrjob.watertick dummy
@@ -36,14 +38,15 @@ scoreboard objectives add swordjobGA minecraft.used:minecraft.golden_apple
 scoreboard objectives add atrusecoas minecraft.used:minecraft.carrot_on_a_stick
 # 設定
 scoreboard objectives add atrjobsetting dummy
-# Swordのスコア色々 SG=設定の略 GA=金林檎 ZB=ゾンビ SC=スキルコンボ CT=クールタイム ef=エフェクトの持続時間 me=measure(距離計測)
+# 移動検知
 scoreboard objectives add atrjob.varA dummy
 scoreboard objectives add atrjob.varB dummy
 scoreboard objectives add atrjob.PrevPosX dummy
 scoreboard objectives add atrjob.PrevPosZ dummy
 scoreboard objectives add atrjob.XFacing dummy
 scoreboard objectives add atrjob.ZFacing dummy
-
+# Swordのスコア色々 SG=設定の略 GA=金林檎 ZB=ゾンビ SC=スキルコンボ CT=クールタイム ef=エフェクトの持続時間 me=measure(距離計測)
+scoreboard objectives add swordjobExptick dummy
 scoreboard objectives add swordjobLv dummy
 scoreboard objectives add swordjobExp dummy
 scoreboard objectives add swordjobskill1 dummy
