@@ -25,6 +25,7 @@ scoreboard objectives add atrjob.thundertick dummy
 scoreboard objectives add atrjob.firedamagetick dummy
 scoreboard objectives add atrjob.waterdamagetick dummy
 scoreboard objectives add atrjob.thunderdamagetick dummy
+scoreboard objectives add atrjob.grasstick dummy
 # advancement
 scoreboard objectives add atrjob.get_a_log_axe dummy
 # damage

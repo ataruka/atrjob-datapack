@@ -8,4 +8,4 @@ execute as @a[scores={atrjob.firedamagetick=20..},tag=atrjob.fire3,gamemode=!cre
 #clear
 execute as @a[scores={atrjob.firedamagetick=20..}] run scoreboard players reset @s atrjob.firedamagetick
 execute as @a[scores={atrjob.firetick=..0}] run function atrmagic:abnormal/fire/remove
-execute as @a[predicate=atrmagic:in_water] run function atrmagic:abnormal/fire/remove
+execute as @a[scores={atrjob.firetick=1..},predicate=atrmagic:in_water] run function atrmagic:abnormal/fire/remove

@@ -13,7 +13,7 @@ execute as @a[scores={atrjob.watertick=1..},gamemode=!creative,gamemode=!spectat
 #clear
 execute as @a[scores={atrjob.waterdamagetick=20..}] run scoreboard players reset @s atrjob.waterdamagetick
 execute as @a[scores={atrjob.watertick=..0}] run function atrmagic:abnormal/water/remove
-execute as @a[predicate=atrmagic:is_on_fire] run function atrmagic:abnormal/water/remove
+execute as @a[scores={atrjob.watertick=1..},predicate=atrmagic:is_on_fire] run function atrmagic:abnormal/water/remove
 execute as @a[scores={atrjob.watertick=1..},predicate=atrmagic:is_running] run function atrmagic:get
 execute as @a[scores={atrjob.watertick=1..,atrjobrng=1..5},tag=atrjob.water1] run function atrmagic:abnormal/water/remove
 execute as @a[scores={atrjob.watertick=1..,atrjobrng=1..3},tag=atrjob.water2] run function atrmagic:abnormal/water/remove
